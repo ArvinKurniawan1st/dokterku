@@ -44,7 +44,7 @@ mual,mual_014.wav,OK,,1.963,0.896,54.3,0.025501,0.2522,16000
 mual,mual_015.wav,OK,,1.963,1.376,29.9,0.033872,0.5185,16000
 mual,mual_016.wav,OK,,2.0,0.704,64.8,0.09474,0.4987,16000
 mual,mual_017.wav,OK,,2.0,0.736,63.2,0.100201,0.473,16000
-mual,mual_018.wav,OK,,2.0,1.152,42.4,0.132713,0.4841,16000
+mual,mual_018.wav,MASALAH,Volume terlalu pelan (RMS=0.000087 < 0.002) | Terlalu banyak silence (74.4% > 70%) | Amplitudo maksimum sangat kecil (0.0033) — kemungkinan file kosong,2.0,0.512,74.4,8.7e-05,0.0033,16000
 mual,mual_019.wav,OK,,2.0,0.768,61.6,0.079262,0.4196,16000
 mual,mual_020.wav,OK,,2.0,0.864,56.8,0.10755,0.4104,16000
 mual,mual_021.wav,OK,,2.0,0.832,58.4,0.071271,0.7772,16000
