@@ -8,6 +8,7 @@ from scipy.io import wavfile
 # KONFIGURASI
 # ─────────────────────────────────────────────
 SAMPLE_RATE    = 16000   
+
 DURASI_REKAM   = 2      
 JUMLAH_SAMPEL  = 25      
 DATASET_FOLDER = "dataset"
