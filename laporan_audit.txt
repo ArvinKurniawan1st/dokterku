@@ -1,0 +1,574 @@
+==============================================================
+  LAPORAN AUDIT DATASET DOKTERKU
+==============================================================
+  Total file  : 444
+  OK          : 309
+  Bermasalah  : 135
+  Rusak       : 0
+
+  Ringkasan per kelas:
+  --------------------------------------------------
+  demam           OK:14  Masalah: 6  Total:20 ← KURANG SAMPEL
+  batuk           OK: 7  Masalah:13  Total:20 ← KURANG SAMPEL
+  pusing          OK:21  Masalah: 4  Total:25
+  mual            OK:19  Masalah: 4  Total:23 ← KURANG SAMPEL
+  sesak           OK:14  Masalah: 9  Total:23 ← KURANG SAMPEL
+  nyeri           OK:10  Masalah:10  Total:20 ← KURANG SAMPEL
+  lemas           OK:11  Masalah: 9  Total:20 ← KURANG SAMPEL
+  bersin          OK:15  Masalah: 5  Total:20 ← KURANG SAMPEL
+  diare           OK:14  Masalah: 6  Total:20 ← KURANG SAMPEL
+  muntah          OK:15  Masalah: 8  Total:23 ← KURANG SAMPEL
+  gatal           OK:22  Masalah: 3  Total:25
+  bengkak         OK:14  Masalah:11  Total:25
+  panas           OK:19  Masalah: 4  Total:23 ← KURANG SAMPEL
+  keringat        OK:16  Masalah: 6  Total:22 ← KURANG SAMPEL
+  berdebar        OK:19  Masalah: 1  Total:20 ← KURANG SAMPEL
+  kebas           OK:15  Masalah: 8  Total:23 ← KURANG SAMPEL
+  kram            OK:13  Masalah:10  Total:23 ← KURANG SAMPEL
+  sakit           OK:14  Masalah:11  Total:25
+  tenggorokan     OK:20  Masalah: 0  Total:20 ← KURANG SAMPEL
+  hidung          OK:17  Masalah: 7  Total:24 ← KURANG SAMPEL
+
+==============================================================
+  DETAIL FILE BERMASALAH
+==============================================================
+
+  [MASALAH] demam/demam_002.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.086533  max_amp=0.9937
+
+  [MASALAH] demam/demam_003.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.017424  max_amp=0.1597
+
+  [MASALAH] demam/demam_005.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.022164  max_amp=0.2749
+
+  [MASALAH] demam/demam_006.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.092567  max_amp=0.8611
+
+  [MASALAH] demam/demam_007.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.089717  max_amp=0.8008
+
+  [MASALAH] demam/demam_017.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.072686  max_amp=0.7476
+
+  [MASALAH] batuk/batuk_001.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.016766  max_amp=0.2135
+
+  [MASALAH] batuk/batuk_002.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.013557  max_amp=0.1637
+
+  [MASALAH] batuk/batuk_003.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.018289  max_amp=0.2054
+
+  [MASALAH] batuk/batuk_004.wav
+    → Terlalu banyak silence (82.4% > 70%)
+    durasi_aktif=0.352s  silence=82.4%  RMS=0.026981  max_amp=0.2944
+
+  [MASALAH] batuk/batuk_005.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.011843  max_amp=0.1245
+
+  [MASALAH] batuk/batuk_006.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.075474  max_amp=0.9712
+
+  [MASALAH] batuk/batuk_007.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.079737  max_amp=0.9181
+
+  [MASALAH] batuk/batuk_010.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.088973  max_amp=0.9889
+
+  [MASALAH] batuk/batuk_011.wav
+    → Terlalu banyak silence (76.1% > 70%)
+    durasi_aktif=0.672s  silence=76.1%  RMS=0.013743  max_amp=0.2375
+
+  [MASALAH] batuk/batuk_012.wav
+    → Terlalu banyak silence (82.4% > 70%)
+    durasi_aktif=0.512s  silence=82.4%  RMS=0.017197  max_amp=0.3919
+
+  [MASALAH] batuk/batuk_014.wav
+    → Terlalu banyak silence (75.3% > 70%)
+    durasi_aktif=0.864s  silence=75.3%  RMS=0.014100  max_amp=0.1963
+
+  [MASALAH] batuk/batuk_016.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.056918  max_amp=0.7533
+
+  [MASALAH] batuk/batuk_019.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.063896  max_amp=0.7362
+
+  [MASALAH] pusing/pusing_006.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.081175  max_amp=0.7248
+
+  [MASALAH] pusing/pusing_007.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.081723  max_amp=0.9918
+
+  [MASALAH] pusing/pusing_017.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.064366  max_amp=0.5324
+
+  [MASALAH] pusing/pusing_025.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.026508  max_amp=0.3185
+
+  [MASALAH] mual/mual_005.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.020668  max_amp=0.2417
+
+  [MASALAH] mual/mual_007.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.090411  max_amp=0.6136
+
+  [MASALAH] mual/mual_009.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.098789  max_amp=0.8117
+
+  [MASALAH] mual/mual_022.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.040922  max_amp=0.4405
+
+  [MASALAH] sesak/sesak_001.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.014369  max_amp=0.2114
+
+  [MASALAH] sesak/sesak_002.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.012710  max_amp=0.1591
+
+  [MASALAH] sesak/sesak_003.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.031652  max_amp=0.4314
+
+  [MASALAH] sesak/sesak_004.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.008632  max_amp=0.1295
+
+  [MASALAH] sesak/sesak_005.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.018382  max_amp=0.2426
+
+  [MASALAH] sesak/sesak_006.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.064193  max_amp=0.6501
+
+  [MASALAH] sesak/sesak_010.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.075057  max_amp=0.9937
+
+  [MASALAH] sesak/sesak_016.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.071271  max_amp=0.6373
+
+  [MASALAH] sesak/sesak_021.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.031527  max_amp=0.5759
+
+  [MASALAH] nyeri/nyeri_001.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.012392  max_amp=0.1193
+
+  [MASALAH] nyeri/nyeri_002.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.013953  max_amp=0.1036
+
+  [MASALAH] nyeri/nyeri_004.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.015140  max_amp=0.1565
+
+  [MASALAH] nyeri/nyeri_005.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.006476  max_amp=0.083
+
+  [MASALAH] nyeri/nyeri_006.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.082069  max_amp=0.9044
+
+  [MASALAH] nyeri/nyeri_007.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.077419  max_amp=0.5583
+
+  [MASALAH] nyeri/nyeri_009.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.086374  max_amp=0.87
+
+  [MASALAH] nyeri/nyeri_012.wav
+    → Terlalu banyak silence (70.7% > 70%)
+    durasi_aktif=0.576s  silence=70.7%  RMS=0.047357  max_amp=0.7823
+
+  [MASALAH] nyeri/nyeri_018.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.070049  max_amp=0.4561
+
+  [MASALAH] nyeri/nyeri_019.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.052933  max_amp=0.3982
+
+  [MASALAH] lemas/lemas_001.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.013128  max_amp=0.1712
+
+  [MASALAH] lemas/lemas_002.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.008732  max_amp=0.1183
+
+  [MASALAH] lemas/lemas_003.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.042490  max_amp=0.622
+
+  [MASALAH] lemas/lemas_004.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.012215  max_amp=0.1169
+
+  [MASALAH] lemas/lemas_005.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.017396  max_amp=0.2686
+
+  [MASALAH] lemas/lemas_006.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.083899  max_amp=0.7483
+
+  [MASALAH] lemas/lemas_007.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.092127  max_amp=0.9704
+
+  [MASALAH] lemas/lemas_009.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.073119  max_amp=0.8439
+
+  [MASALAH] lemas/lemas_020.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.051529  max_amp=0.3465
+
+  [MASALAH] bersin/bersin_002.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.009980  max_amp=0.1335
+
+  [MASALAH] bersin/bersin_003.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.059578  max_amp=0.8096
+
+  [MASALAH] bersin/bersin_005.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.025109  max_amp=0.3327
+
+  [MASALAH] bersin/bersin_008.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.088045  max_amp=0.993
+
+  [MASALAH] bersin/bersin_015.wav
+    → Amplitudo maksimum sangat kecil (0.0073) — kemungkinan file kosong
+    durasi_aktif=2.0s  silence=0.0%  RMS=0.002007  max_amp=0.0073
+
+  [MASALAH] diare/diare_003.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.052677  max_amp=0.4048
+
+  [MASALAH] diare/diare_004.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.020939  max_amp=0.1738
+
+  [MASALAH] diare/diare_005.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.022337  max_amp=0.1934
+
+  [MASALAH] diare/diare_008.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.106145  max_amp=0.9894
+
+  [MASALAH] diare/diare_019.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.061268  max_amp=0.6488
+
+  [MASALAH] diare/diare_020.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.087790  max_amp=0.4526
+
+  [MASALAH] muntah/muntah_002.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.009102  max_amp=0.1066
+
+  [MASALAH] muntah/muntah_005.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.019344  max_amp=0.2282
+
+  [MASALAH] muntah/muntah_008.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.094212  max_amp=0.9932
+
+  [MASALAH] muntah/muntah_009.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.067320  max_amp=0.696
+
+  [MASALAH] muntah/muntah_016.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.080126  max_amp=0.6567
+
+  [MASALAH] muntah/muntah_019.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.065000  max_amp=0.6984
+
+  [MASALAH] muntah/muntah_020.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.065993  max_amp=0.6829
+
+  [MASALAH] muntah/muntah_022.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.039467  max_amp=0.6148
+
+  [MASALAH] gatal/gatal_002.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.022834  max_amp=0.1989
+
+  [MASALAH] gatal/gatal_020.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.065496  max_amp=0.7691
+
+  [MASALAH] gatal/gatal_022.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.049274  max_amp=0.5639
+
+  [MASALAH] bengkak/bengkak_001.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.025481  max_amp=0.4313
+
+  [MASALAH] bengkak/bengkak_002.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.014580  max_amp=0.1522
+
+  [MASALAH] bengkak/bengkak_003.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.036658  max_amp=0.5161
+
+  [MASALAH] bengkak/bengkak_004.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.010758  max_amp=0.0972
+
+  [MASALAH] bengkak/bengkak_005.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.012260  max_amp=0.1483
+
+  [MASALAH] bengkak/bengkak_006.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.091438  max_amp=0.8677
+
+  [MASALAH] bengkak/bengkak_007.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.087439  max_amp=0.9915
+
+  [MASALAH] bengkak/bengkak_009.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.087793  max_amp=0.9863
+
+  [MASALAH] bengkak/bengkak_016.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.069345  max_amp=0.6598
+
+  [MASALAH] bengkak/bengkak_021.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.039093  max_amp=0.4759
+
+  [MASALAH] bengkak/bengkak_022.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.027728  max_amp=0.3542
+
+  [MASALAH] panas/panas_002.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.015113  max_amp=0.1507
+
+  [MASALAH] panas/panas_003.wav
+    → Terlalu banyak silence (82.4% > 70%)
+    durasi_aktif=0.352s  silence=82.4%  RMS=0.053893  max_amp=0.6247
+
+  [MASALAH] panas/panas_004.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.007252  max_amp=0.0675
+
+  [MASALAH] panas/panas_005.wav
+    → Terlalu banyak silence (82.4% > 70%)
+    durasi_aktif=0.352s  silence=82.4%  RMS=0.032253  max_amp=0.5099
+
+  [MASALAH] keringat/keringat_001.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.023558  max_amp=0.17
+
+  [MASALAH] keringat/keringat_002.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.031537  max_amp=0.3447
+
+  [MASALAH] keringat/keringat_004.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.013825  max_amp=0.1208
+
+  [MASALAH] keringat/keringat_005.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.020431  max_amp=0.2244
+
+  [MASALAH] keringat/keringat_009.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.084210  max_amp=0.993
+
+  [MASALAH] keringat/keringat_016.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.077339  max_amp=0.6593
+
+  [MASALAH] berdebar/berdebar_019.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.066889  max_amp=0.6905
+
+  [MASALAH] kebas/kebas_001.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.031157  max_amp=0.3527
+
+  [MASALAH] kebas/kebas_002.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.016015  max_amp=0.1581
+
+  [MASALAH] kebas/kebas_003.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.065197  max_amp=0.7166
+
+  [MASALAH] kebas/kebas_004.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.016178  max_amp=0.1683
+
+  [MASALAH] kebas/kebas_005.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.024621  max_amp=0.3361
+
+  [MASALAH] kebas/kebas_009.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.073996  max_amp=0.9915
+
+  [MASALAH] kebas/kebas_020.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.065453  max_amp=0.7422
+
+  [MASALAH] kebas/kebas_022.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.027121  max_amp=0.4738
+
+  [MASALAH] kram/kram_001.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.026248  max_amp=0.3067
+
+  [MASALAH] kram/kram_002.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.019518  max_amp=0.2232
+
+  [MASALAH] kram/kram_003.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.081164  max_amp=0.9224
+
+  [MASALAH] kram/kram_004.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.033151  max_amp=0.3586
+
+  [MASALAH] kram/kram_005.wav
+    → Terlalu banyak silence (80.8% > 70%)
+    durasi_aktif=0.384s  silence=80.8%  RMS=0.043929  max_amp=0.5142
+
+  [MASALAH] kram/kram_006.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.094419  max_amp=0.9379
+
+  [MASALAH] kram/kram_015.wav
+    → Terlalu banyak silence (71.6% > 70%)
+    durasi_aktif=0.8s  silence=71.6%  RMS=0.057284  max_amp=0.9492
+
+  [MASALAH] kram/kram_016.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.069519  max_amp=0.7303
+
+  [MASALAH] kram/kram_021.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.112325  max_amp=0.9931
+
+  [MASALAH] kram/kram_023.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.056965  max_amp=0.676
+
+  [MASALAH] sakit/sakit_001.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.012905  max_amp=0.2386
+
+  [MASALAH] sakit/sakit_002.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.008851  max_amp=0.1145
+
+  [MASALAH] sakit/sakit_003.wav
+    → Terlalu banyak silence (82.4% > 70%)
+    durasi_aktif=0.352s  silence=82.4%  RMS=0.024415  max_amp=0.422
+
+  [MASALAH] sakit/sakit_004.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.012451  max_amp=0.1501
+
+  [MASALAH] sakit/sakit_005.wav
+    → Terlalu banyak silence (77.6% > 70%)
+    durasi_aktif=0.448s  silence=77.6%  RMS=0.010518  max_amp=0.1612
+
+  [MASALAH] sakit/sakit_009.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.077351  max_amp=0.9878
+
+  [MASALAH] sakit/sakit_017.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.062111  max_amp=0.6824
+
+  [MASALAH] sakit/sakit_022.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.019791  max_amp=0.3865
+
+  [MASALAH] sakit/sakit_023.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.021099  max_amp=0.3032
+
+  [MASALAH] sakit/sakit_024.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.018377  max_amp=0.3855
+
+  [MASALAH] sakit/sakit_025.wav
+    → Terlalu banyak silence (79.2% > 70%)
+    durasi_aktif=0.416s  silence=79.2%  RMS=0.011012  max_amp=0.2057
+
+  [MASALAH] hidung/hidung_001.wav
+    → Terlalu banyak silence (71.2% > 70%)
+    durasi_aktif=0.576s  silence=71.2%  RMS=0.019785  max_amp=0.1464
+
+  [MASALAH] hidung/hidung_002.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.029821  max_amp=0.2405
+
+  [MASALAH] hidung/hidung_003.wav
+    → Terlalu banyak silence (76.0% > 70%)
+    durasi_aktif=0.48s  silence=76.0%  RMS=0.034252  max_amp=0.2805
+
+  [MASALAH] hidung/hidung_004.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.034411  max_amp=0.3036
+
+  [MASALAH] hidung/hidung_005.wav
+    → Terlalu banyak silence (72.8% > 70%)
+    durasi_aktif=0.544s  silence=72.8%  RMS=0.013693  max_amp=0.1091
+
+  [MASALAH] hidung/hidung_009.wav
+    → Terlalu banyak silence (74.4% > 70%)
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.107313  max_amp=0.9916
+
+  [MASALAH] hidung/hidung_022.wav
+    → Terlalu banyak silence (72.0% > 70%)
+    durasi_aktif=0.56s  silence=72.0%  RMS=0.034984  max_amp=0.2985
