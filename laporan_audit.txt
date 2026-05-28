@@ -1,50 +1,30 @@
 ==============================================================
   LAPORAN AUDIT DATASET DOKTERKU
 ==============================================================
-  Total file  : 276
-  OK          : 273
-  Bermasalah  : 3
+  Total file  : 263
+  OK          : 263
+  Bermasalah  : 0
   Rusak       : 0
 
   Ringkasan per kelas:
   --------------------------------------------------
   demam           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  batuk           OK: 9  Masalah: 2  Total:11 ← KURANG SAMPEL
+  batuk           OK:10  Masalah: 0  Total:10 ← KURANG SAMPEL
   pusing          OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  mual            OK:14  Masalah: 1  Total:15 ← KURANG SAMPEL
+  mual            OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
   sesak           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  nyeri           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
+  nyeri           OK:10  Masalah: 0  Total:10 ← KURANG SAMPEL
   lemas           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
   bersin          OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  diare           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
+  diare           OK:11  Masalah: 0  Total:11 ← KURANG SAMPEL
   muntah          OK:12  Masalah: 0  Total:12 ← KURANG SAMPEL
   gatal           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
   bengkak         OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
   panas           OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
   keringat        OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
   berdebar        OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  kebas           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  kram            OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
-  sakit           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  tenggorokan     OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
+  kebas           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
+  kram            OK:11  Masalah: 0  Total:11 ← KURANG SAMPEL
+  sakit           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
+  tenggorokan     OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
   hidung          OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
-
-==============================================================
-  DETAIL FILE BERMASALAH
-==============================================================
-
-  [MASALAH] batuk/batuk_016.wav
-    → Volume terlalu pelan (RMS=0.000027 < 0.002)
-    → Amplitudo maksimum sangat kecil (0.0010) — kemungkinan file kosong
-    durasi_aktif=2.0s  silence=0.0%  RMS=0.000027  max_amp=0.001
-
-  [MASALAH] batuk/batuk_017.wav
-    → Volume terlalu pelan (RMS=0.000152 < 0.002)
-    → Amplitudo maksimum sangat kecil (0.0032) — kemungkinan file kosong
-    durasi_aktif=1.408s  silence=29.6%  RMS=0.000152  max_amp=0.0032
-
-  [MASALAH] mual/mual_018.wav
-    → Volume terlalu pelan (RMS=0.000087 < 0.002)
-    → Terlalu banyak silence (74.4% > 70%)
-    → Amplitudo maksimum sangat kecil (0.0033) — kemungkinan file kosong
-    durasi_aktif=0.512s  silence=74.4%  RMS=0.000087  max_amp=0.0033
