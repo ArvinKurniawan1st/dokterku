@@ -1,11 +1,6 @@
 kelas,file,status,masalah,durasi_asli,durasi_aktif,silence_pct,rms,max_amp,sr
 demam,demam_001.wav,OK,,2.0,0.832,58.4,0.025544,0.2816,16000
-demam,demam_002.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.086533,0.9937,16000
-demam,demam_003.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.017424,0.1597,16000
 demam,demam_004.wav,OK,,2.0,0.672,66.4,0.011944,0.1027,16000
-demam,demam_005.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.022164,0.2749,16000
-demam,demam_006.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.092567,0.8611,16000
-demam,demam_007.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.089717,0.8008,16000
 demam,demam_008.wav,OK,,2.0,0.832,58.4,0.110399,0.9702,16000
 demam,demam_009.wav,OK,,2.0,0.768,61.6,0.088172,0.8768,16000
 demam,demam_010.wav,OK,,2.0,0.96,52.0,0.085715,0.591,16000
@@ -15,37 +10,31 @@ demam,demam_013.wav,OK,,1.877,0.896,52.3,0.02757,0.1728,16000
 demam,demam_014.wav,OK,,2.304,1.28,44.4,0.038078,0.2658,16000
 demam,demam_015.wav,OK,,1.963,0.768,60.9,0.030083,0.252,16000
 demam,demam_016.wav,OK,,2.0,1.312,34.4,0.132143,0.7505,16000
-demam,demam_017.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.072686,0.7476,16000
 demam,demam_018.wav,OK,,2.0,0.896,55.2,0.109636,0.6674,16000
 demam,demam_019.wav,OK,,2.0,1.2,40.0,0.126874,0.6581,16000
 demam,demam_020.wav,OK,,2.0,0.736,63.2,0.106018,0.6886,16000
-batuk,batuk_001.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.016766,0.2135,16000
-batuk,batuk_002.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.013557,0.1637,16000
-batuk,batuk_003.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.018289,0.2054,16000
-batuk,batuk_004.wav,MASALAH,Terlalu banyak silence (82.4% > 70%),2.0,0.352,82.4,0.026981,0.2944,16000
-batuk,batuk_005.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.011843,0.1245,16000
-batuk,batuk_006.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.075474,0.9712,16000
-batuk,batuk_007.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.079737,0.9181,16000
+demam,demam_021.wav,OK,,2.0,0.64,68.0,0.085519,0.9943,16000
+demam,demam_022.wav,OK,,2.0,0.72,64.0,0.063967,0.6113,16000
+demam,demam_023.wav,OK,,2.0,0.688,65.6,0.123841,0.9942,16000
+demam,demam_024.wav,OK,,2.0,0.752,62.4,0.09851,0.8668,16000
+demam,demam_025.wav,OK,,2.0,0.768,61.6,0.088108,0.9784,16000
 batuk,batuk_008.wav,OK,,2.0,0.928,53.6,0.099708,0.9902,16000
 batuk,batuk_009.wav,OK,,2.0,1.152,42.4,0.109292,0.7786,16000
-batuk,batuk_010.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.088973,0.9889,16000
-batuk,batuk_011.wav,MASALAH,Terlalu banyak silence (76.1% > 70%),2.816,0.672,76.1,0.013743,0.2375,16000
-batuk,batuk_012.wav,MASALAH,Terlalu banyak silence (82.4% > 70%),2.901,0.512,82.4,0.017197,0.3919,16000
 batuk,batuk_013.wav,OK,,2.816,2.176,22.7,0.048153,0.3975,16000
-batuk,batuk_014.wav,MASALAH,Terlalu banyak silence (75.3% > 70%),3.499,0.864,75.3,0.0141,0.1963,16000
 batuk,batuk_015.wav,OK,,2.304,0.992,56.9,0.026749,0.2606,16000
-batuk,batuk_016.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.056918,0.7533,16000
 batuk,batuk_017.wav,OK,,2.0,0.832,58.4,0.083286,0.7536,16000
 batuk,batuk_018.wav,OK,,2.0,0.768,61.6,0.088487,0.6989,16000
-batuk,batuk_019.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.063896,0.7362,16000
-batuk,batuk_020.wav,OK,,2.0,1.056,47.2,0.110077,0.5177,16000
+batuk,batuk_020.wav,MASALAH,Volume terlalu pelan (RMS=0.000027 < 0.002) | Amplitudo maksimum sangat kecil (0.0003) — kemungkinan file kosong,2.0,2.0,0.0,2.7e-05,0.0003,16000
+batuk,batuk_021.wav,OK,,2.0,0.64,68.0,0.070057,0.5301,16000
+batuk,batuk_022.wav,OK,,2.0,0.704,64.8,0.161666,0.9466,16000
+batuk,batuk_023.wav,OK,,2.0,0.8,60.0,0.082192,0.798,16000
+batuk,batuk_024.wav,OK,,2.0,0.608,69.6,0.190411,0.9944,16000
+batuk,batuk_025.wav,OK,,2.0,0.688,65.6,0.169766,0.9939,16000
 pusing,pusing_001.wav,OK,,2.0,0.608,69.6,0.00902,0.0934,16000
 pusing,pusing_002.wav,OK,,2.0,0.672,66.4,0.007239,0.0573,16000
 pusing,pusing_003.wav,OK,,2.0,0.608,69.6,0.035195,0.4331,16000
 pusing,pusing_004.wav,OK,,2.0,0.64,68.0,0.01768,0.1864,16000
 pusing,pusing_005.wav,OK,,2.0,0.736,63.2,0.012067,0.0952,16000
-pusing,pusing_006.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.081175,0.7248,16000
-pusing,pusing_007.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.081723,0.9918,16000
 pusing,pusing_008.wav,OK,,2.0,0.992,50.4,0.096264,0.9919,16000
 pusing,pusing_009.wav,OK,,2.0,0.832,58.4,0.102057,0.7221,16000
 pusing,pusing_010.wav,OK,,2.0,1.152,42.4,0.098709,0.5898,16000
@@ -55,7 +44,6 @@ pusing,pusing_013.wav,OK,,1.024,0.512,50.0,0.068346,0.4203,16000
 pusing,pusing_014.wav,OK,,2.389,2.389,0.0,0.05944,0.2918,16000
 pusing,pusing_015.wav,OK,,1.024,0.352,65.6,0.070024,0.7618,16000
 pusing,pusing_016.wav,OK,,2.0,0.864,56.8,0.103595,0.5858,16000
-pusing,pusing_017.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.064366,0.5324,16000
 pusing,pusing_018.wav,OK,,2.0,0.96,52.0,0.114661,0.6001,16000
 pusing,pusing_019.wav,OK,,2.0,0.704,64.8,0.084788,0.5404,16000
 pusing,pusing_020.wav,OK,,2.0,0.896,55.2,0.107483,0.6143,16000
@@ -63,16 +51,13 @@ pusing,pusing_021.wav,OK,,2.0,0.64,68.0,0.023989,0.2564,16000
 pusing,pusing_022.wav,OK,,2.0,1.024,48.8,0.023298,0.1886,16000
 pusing,pusing_023.wav,OK,,2.0,0.832,58.4,0.022945,0.1519,16000
 pusing,pusing_024.wav,OK,,2.0,0.8,60.0,0.027556,0.1825,16000
-pusing,pusing_025.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.026508,0.3185,16000
+pusing,pusing_025.wav,OK,,2.0,0.736,63.2,0.041304,0.4498,16000
 mual,mual_001.wav,OK,,2.0,0.608,69.6,0.015878,0.1522,16000
 mual,mual_002.wav,OK,,2.0,0.608,69.6,0.02002,0.2033,16000
 mual,mual_003.wav,OK,,2.0,0.64,68.0,0.071743,0.6691,16000
 mual,mual_004.wav,OK,,2.0,0.8,60.0,0.013612,0.1065,16000
-mual,mual_005.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.020668,0.2417,16000
 mual,mual_006.wav,OK,,2.0,0.672,66.4,0.100955,0.7222,16000
-mual,mual_007.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.090411,0.6136,16000
 mual,mual_008.wav,OK,,2.0,0.896,55.2,0.094103,0.6233,16000
-mual,mual_009.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.098789,0.8117,16000
 mual,mual_010.wav,OK,,2.0,0.992,50.4,0.116415,0.5429,16000
 mual,mual_011.wav,OK,,1.28,0.704,45.0,0.071416,0.5942,16000
 mual,mual_012.wav,OK,,2.219,1.664,25.0,0.045253,0.2681,16000
@@ -85,60 +70,41 @@ mual,mual_018.wav,OK,,2.0,1.152,42.4,0.132713,0.4841,16000
 mual,mual_019.wav,OK,,2.0,0.768,61.6,0.079262,0.4196,16000
 mual,mual_020.wav,OK,,2.0,0.864,56.8,0.10755,0.4104,16000
 mual,mual_021.wav,OK,,2.0,0.832,58.4,0.071271,0.7772,16000
-mual,mual_022.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.040922,0.4405,16000
 mual,mual_024.wav,OK,,2.0,0.96,52.0,0.032046,0.3459,16000
-sesak,sesak_001.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.014369,0.2114,16000
-sesak,sesak_002.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.01271,0.1591,16000
-sesak,sesak_003.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.031652,0.4314,16000
-sesak,sesak_004.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.008632,0.1295,16000
-sesak,sesak_005.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.018382,0.2426,16000
-sesak,sesak_006.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.064193,0.6501,16000
+mual,mual_025.wav,OK,,2.0,0.64,68.0,0.074731,0.9048,16000
 sesak,sesak_007.wav,OK,,2.0,1.024,48.8,0.081641,0.5329,16000
 sesak,sesak_008.wav,OK,,2.0,0.832,58.4,0.07415,0.8027,16000
 sesak,sesak_009.wav,OK,,2.0,0.896,55.2,0.090883,0.6445,16000
-sesak,sesak_010.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.075057,0.9937,16000
 sesak,sesak_011.wav,OK,,1.792,1.472,17.9,0.057108,0.4756,16000
 sesak,sesak_012.wav,OK,,1.451,0.768,47.1,0.01478,0.1484,16000
 sesak,sesak_013.wav,OK,,1.536,0.896,41.7,0.024488,0.3896,16000
 sesak,sesak_014.wav,OK,,2.475,1.184,52.2,0.012659,0.1416,16000
 sesak,sesak_015.wav,OK,,1.195,0.448,62.5,0.025962,0.2936,16000
-sesak,sesak_016.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.071271,0.6373,16000
 sesak,sesak_017.wav,OK,,2.0,0.896,55.2,0.100546,0.588,16000
 sesak,sesak_018.wav,OK,,2.0,0.608,69.6,0.076593,0.6686,16000
 sesak,sesak_019.wav,OK,,2.0,1.088,45.6,0.109285,0.6967,16000
 sesak,sesak_020.wav,OK,,2.0,0.96,52.0,0.112111,0.5602,16000
-sesak,sesak_021.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.031527,0.5759,16000
+sesak,sesak_021.wav,OK,,2.0,0.704,64.8,0.059136,0.7318,16000
+sesak,sesak_022.wav,OK,,2.0,0.8,60.0,0.102054,0.8416,16000
+sesak,sesak_023.wav,OK,,2.0,0.64,68.0,0.041903,0.5345,16000
 sesak,sesak_024.wav,OK,,2.0,1.12,44.0,0.022123,0.2015,16000
 sesak,sesak_025.wav,OK,,2.0,0.608,69.6,0.011732,0.162,16000
-nyeri,nyeri_001.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.012392,0.1193,16000
-nyeri,nyeri_002.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.013953,0.1036,16000
 nyeri,nyeri_003.wav,OK,,2.0,0.736,63.2,0.024769,0.1632,16000
-nyeri,nyeri_004.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.01514,0.1565,16000
-nyeri,nyeri_005.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.006476,0.083,16000
-nyeri,nyeri_006.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.082069,0.9044,16000
-nyeri,nyeri_007.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.077419,0.5583,16000
 nyeri,nyeri_008.wav,OK,,2.0,0.928,53.6,0.089946,0.5867,16000
-nyeri,nyeri_009.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.086374,0.87,16000
 nyeri,nyeri_010.wav,OK,,2.0,0.832,58.4,0.103084,0.6058,16000
 nyeri,nyeri_011.wav,OK,,1.792,0.768,57.1,0.054686,0.7879,16000
-nyeri,nyeri_012.wav,MASALAH,Terlalu banyak silence (70.7% > 70%),1.963,0.576,70.7,0.047357,0.7823,16000
 nyeri,nyeri_013.wav,OK,,1.365,0.757,44.5,0.041922,0.4639,16000
 nyeri,nyeri_014.wav,OK,,1.024,0.544,46.9,0.08498,0.7343,16000
 nyeri,nyeri_015.wav,OK,,1.365,0.565,58.6,0.074572,0.6617,16000
 nyeri,nyeri_016.wav,OK,,2.0,0.608,69.6,0.090933,0.5938,16000
 nyeri,nyeri_017.wav,OK,,2.0,0.64,68.0,0.088202,0.4954,16000
-nyeri,nyeri_018.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.070049,0.4561,16000
-nyeri,nyeri_019.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.052933,0.3982,16000
 nyeri,nyeri_020.wav,OK,,2.0,0.928,53.6,0.107842,0.5285,16000
-lemas,lemas_001.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.013128,0.1712,16000
-lemas,lemas_002.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.008732,0.1183,16000
-lemas,lemas_003.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.04249,0.622,16000
-lemas,lemas_004.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.012215,0.1169,16000
-lemas,lemas_005.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.017396,0.2686,16000
-lemas,lemas_006.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.083899,0.7483,16000
-lemas,lemas_007.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.092127,0.9704,16000
+nyeri,nyeri_021.wav,OK,,2.0,0.704,64.8,0.046532,0.5336,16000
+nyeri,nyeri_022.wav,OK,,2.0,0.672,66.4,0.092202,0.8567,16000
+nyeri,nyeri_023.wav,OK,,2.0,0.736,63.2,0.066933,0.7715,16000
+nyeri,nyeri_024.wav,OK,,2.0,0.672,66.4,0.098983,0.778,16000
+nyeri,nyeri_025.wav,OK,,2.0,0.64,68.0,0.071342,0.6713,16000
 lemas,lemas_008.wav,OK,,2.0,0.832,58.4,0.101861,0.8125,16000
-lemas,lemas_009.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.073119,0.8439,16000
 lemas,lemas_010.wav,OK,,2.0,1.088,45.6,0.086983,0.8094,16000
 lemas,lemas_011.wav,OK,,1.451,0.907,37.5,0.07775,0.803,16000
 lemas,lemas_012.wav,OK,,1.451,0.864,40.4,0.064705,0.7061,16000
@@ -149,35 +115,34 @@ lemas,lemas_016.wav,OK,,2.0,0.608,69.6,0.080225,0.6095,16000
 lemas,lemas_017.wav,OK,,2.0,0.736,63.2,0.090879,0.4484,16000
 lemas,lemas_018.wav,OK,,2.0,0.608,69.6,0.069493,0.4147,16000
 lemas,lemas_019.wav,OK,,2.0,1.024,48.8,0.105313,0.406,16000
-lemas,lemas_020.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.051529,0.3465,16000
+lemas,lemas_021.wav,OK,,2.0,0.768,61.6,0.062017,0.9058,16000
+lemas,lemas_022.wav,OK,,2.0,0.784,60.8,0.065194,0.6813,16000
+lemas,lemas_023.wav,OK,,2.0,0.688,65.6,0.086743,0.9927,16000
+lemas,lemas_024.wav,OK,,2.0,0.608,69.6,0.048962,0.8574,16000
+lemas,lemas_025.wav,OK,,2.0,0.88,56.0,0.052131,0.4406,16000
 bersin,bersin_001.wav,OK,,2.0,0.768,61.6,0.021766,0.2001,16000
-bersin,bersin_002.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.00998,0.1335,16000
-bersin,bersin_003.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.059578,0.8096,16000
 bersin,bersin_004.wav,OK,,2.0,0.704,64.8,0.009495,0.1464,16000
-bersin,bersin_005.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.025109,0.3327,16000
 bersin,bersin_006.wav,OK,,2.0,0.64,68.0,0.106146,0.9135,16000
 bersin,bersin_007.wav,OK,,2.0,1.024,48.8,0.097575,0.8854,16000
-bersin,bersin_008.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.088045,0.993,16000
 bersin,bersin_009.wav,OK,,2.0,0.864,56.8,0.111215,0.9933,16000
 bersin,bersin_010.wav,OK,,2.0,0.992,50.4,0.099065,0.773,16000
 bersin,bersin_011.wav,OK,,2.0,0.992,50.4,0.019284,0.1348,16000
 bersin,bersin_012.wav,OK,,2.0,2.0,0.0,0.004002,0.0286,16000
 bersin,bersin_013.wav,OK,,2.0,2.0,0.0,0.00234,0.0104,16000
 bersin,bersin_014.wav,OK,,2.0,2.0,0.0,0.002927,0.0256,16000
-bersin,bersin_015.wav,MASALAH,Amplitudo maksimum sangat kecil (0.0073) — kemungkinan file kosong,2.0,2.0,0.0,0.002007,0.0073,16000
 bersin,bersin_016.wav,OK,,2.0,0.608,69.6,0.088097,0.6779,16000
 bersin,bersin_017.wav,OK,,2.0,1.024,48.8,0.110488,0.6056,16000
 bersin,bersin_018.wav,OK,,2.0,0.704,64.8,0.083285,0.634,16000
 bersin,bersin_019.wav,OK,,2.0,1.12,44.0,0.101598,0.4539,16000
-bersin,bersin_020.wav,OK,,2.0,1.024,48.8,0.109766,0.5092,16000
+bersin,bersin_020.wav,OK,,2.0,0.624,68.8,0.169996,0.9938,16000
+bersin,bersin_021.wav,OK,,2.0,0.8,60.0,0.074851,0.8846,16000
+bersin,bersin_022.wav,OK,,2.0,0.784,60.8,0.061411,0.7391,16000
+bersin,bersin_024.wav,OK,,2.0,0.784,60.8,0.069425,0.8575,16000
+bersin,bersin_025.wav,OK,,2.0,0.64,68.0,0.039241,0.6851,16000
 diare,diare_001.wav,OK,,2.0,0.736,63.2,0.019092,0.1432,16000
 diare,diare_002.wav,OK,,2.0,0.64,68.0,0.011941,0.0879,16000
-diare,diare_003.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.052677,0.4048,16000
-diare,diare_004.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.020939,0.1738,16000
-diare,diare_005.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.022337,0.1934,16000
 diare,diare_006.wav,OK,,2.0,0.736,63.2,0.101863,0.6852,16000
 diare,diare_007.wav,OK,,2.0,0.64,68.0,0.092456,0.6782,16000
-diare,diare_008.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.106145,0.9894,16000
 diare,diare_009.wav,OK,,2.0,1.44,28.0,0.113037,0.7543,16000
 diare,diare_010.wav,OK,,2.0,0.992,50.4,0.114958,0.6772,16000
 diare,diare_011.wav,OK,,1.792,0.896,50.0,0.050036,0.3993,16000
@@ -188,33 +153,30 @@ diare,diare_015.wav,OK,,2.389,1.312,45.1,0.030597,0.1245,16000
 diare,diare_016.wav,OK,,2.0,0.864,56.8,0.104174,0.5811,16000
 diare,diare_017.wav,OK,,2.0,0.64,68.0,0.091524,0.5338,16000
 diare,diare_018.wav,OK,,2.0,1.056,47.2,0.127908,0.6072,16000
-diare,diare_019.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.061268,0.6488,16000
-diare,diare_020.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.08779,0.4526,16000
+diare,diare_021.wav,OK,,2.0,0.832,58.4,0.056091,0.6068,16000
+diare,diare_022.wav,OK,,2.0,0.656,67.2,0.11752,0.9948,16000
+diare,diare_023.wav,OK,,2.0,0.64,68.0,0.032497,0.4243,16000
+diare,diare_024.wav,OK,,2.0,0.672,66.4,0.056647,0.5997,16000
+diare,diare_025.wav,OK,,2.0,0.624,68.8,0.144084,0.9884,16000
 muntah,muntah_001.wav,OK,,2.0,0.608,69.6,0.020517,0.2607,16000
-muntah,muntah_002.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.009102,0.1066,16000
 muntah,muntah_003.wav,OK,,2.0,0.672,66.4,0.045854,0.5425,16000
 muntah,muntah_004.wav,OK,,2.0,0.704,64.8,0.019586,0.1829,16000
-muntah,muntah_005.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.019344,0.2282,16000
 muntah,muntah_006.wav,OK,,2.0,0.64,68.0,0.10516,0.7763,16000
 muntah,muntah_007.wav,OK,,2.0,0.832,58.4,0.084583,0.7243,16000
-muntah,muntah_008.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.094212,0.9932,16000
-muntah,muntah_009.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.06732,0.696,16000
 muntah,muntah_010.wav,OK,,2.0,1.28,36.0,0.111632,0.5261,16000
 muntah,muntah_011.wav,OK,,2.048,0.8,60.9,0.037383,0.3431,16000
 muntah,muntah_012.wav,OK,,1.536,0.736,52.1,0.047393,0.3875,16000
 muntah,muntah_013.wav,OK,,1.621,0.672,58.6,0.040463,0.3591,16000
 muntah,muntah_014.wav,OK,,2.645,2.4,9.3,0.044581,0.2422,16000
 muntah,muntah_015.wav,OK,,2.901,2.176,25.0,0.019801,0.2659,16000
-muntah,muntah_016.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.080126,0.6567,16000
 muntah,muntah_017.wav,OK,,2.0,0.672,66.4,0.079268,0.5906,16000
 muntah,muntah_018.wav,OK,,2.0,1.152,42.4,0.103226,0.4377,16000
-muntah,muntah_019.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.065,0.6984,16000
-muntah,muntah_020.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.065993,0.6829,16000
-muntah,muntah_022.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.039467,0.6148,16000
+muntah,muntah_021.wav,OK,,2.0,0.8,60.0,0.032965,0.3804,16000
+muntah,muntah_022.wav,OK,,2.0,0.672,66.4,0.071614,0.9835,16000
 muntah,muntah_023.wav,OK,,2.0,0.64,68.0,0.033609,0.3629,16000
 muntah,muntah_024.wav,OK,,2.0,0.608,69.6,0.02823,0.3515,16000
+muntah,muntah_025.wav,OK,,2.0,0.704,64.8,0.034831,0.4779,16000
 gatal,gatal_001.wav,OK,,2.0,0.608,69.6,0.030067,0.3013,16000
-gatal,gatal_002.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.022834,0.1989,16000
 gatal,gatal_003.wav,OK,,2.0,0.608,69.6,0.050937,0.6845,16000
 gatal,gatal_004.wav,OK,,2.0,0.704,64.8,0.027407,0.2156,16000
 gatal,gatal_005.wav,OK,,2.0,0.608,69.6,0.025387,0.2094,16000
@@ -232,42 +194,28 @@ gatal,gatal_016.wav,OK,,2.0,0.8,60.0,0.083354,0.7116,16000
 gatal,gatal_017.wav,OK,,2.0,1.28,36.0,0.093754,0.6394,16000
 gatal,gatal_018.wav,OK,,2.0,0.8,60.0,0.08213,0.5404,16000
 gatal,gatal_019.wav,OK,,2.0,1.44,28.0,0.107349,0.5814,16000
-gatal,gatal_020.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.065496,0.7691,16000
 gatal,gatal_021.wav,OK,,2.0,0.832,58.4,0.036001,0.3901,16000
-gatal,gatal_022.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.049274,0.5639,16000
+gatal,gatal_022.wav,OK,,2.0,0.8,60.0,0.14576,0.9828,16000
 gatal,gatal_023.wav,OK,,2.0,0.704,64.8,0.022448,0.2746,16000
 gatal,gatal_024.wav,OK,,2.0,0.832,58.4,0.015851,0.1956,16000
 gatal,gatal_025.wav,OK,,2.0,0.864,56.8,0.028936,0.3045,16000
-bengkak,bengkak_001.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.025481,0.4313,16000
-bengkak,bengkak_002.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.01458,0.1522,16000
-bengkak,bengkak_003.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.036658,0.5161,16000
-bengkak,bengkak_004.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.010758,0.0972,16000
-bengkak,bengkak_005.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.01226,0.1483,16000
-bengkak,bengkak_006.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.091438,0.8677,16000
-bengkak,bengkak_007.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.087439,0.9915,16000
 bengkak,bengkak_008.wav,OK,,2.0,0.96,52.0,0.101489,0.6887,16000
-bengkak,bengkak_009.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.087793,0.9863,16000
 bengkak,bengkak_010.wav,OK,,2.0,0.96,52.0,0.123176,0.9353,16000
 bengkak,bengkak_011.wav,OK,,2.304,1.856,19.4,0.048143,0.4332,16000
 bengkak,bengkak_012.wav,OK,,2.133,1.792,16.0,0.052901,0.7861,16000
 bengkak,bengkak_013.wav,OK,,2.816,2.72,3.4,0.075021,0.6389,16000
 bengkak,bengkak_014.wav,OK,,2.048,1.728,15.6,0.034578,0.4049,16000
 bengkak,bengkak_015.wav,OK,,2.048,1.984,3.1,0.070756,0.9484,16000
-bengkak,bengkak_016.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.069345,0.6598,16000
 bengkak,bengkak_017.wav,OK,,2.0,0.704,64.8,0.085417,0.5975,16000
 bengkak,bengkak_018.wav,OK,,2.0,0.64,68.0,0.058716,0.6732,16000
 bengkak,bengkak_019.wav,OK,,2.0,0.704,64.8,0.086661,0.665,16000
 bengkak,bengkak_020.wav,OK,,2.0,1.184,40.8,0.099048,0.5115,16000
-bengkak,bengkak_021.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.039093,0.4759,16000
-bengkak,bengkak_022.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.027728,0.3542,16000
+bengkak,bengkak_021.wav,OK,,2.0,0.704,64.8,0.015038,0.1637,16000
+bengkak,bengkak_022.wav,OK,,2.0,0.736,63.2,0.107521,0.9939,16000
 bengkak,bengkak_023.wav,OK,,2.0,0.864,56.8,0.040744,0.4554,16000
 bengkak,bengkak_024.wav,OK,,2.0,0.704,64.8,0.06461,0.626,16000
 bengkak,bengkak_025.wav,OK,,2.0,0.608,69.6,0.042587,0.505,16000
 panas,panas_001.wav,OK,,2.0,0.992,50.4,0.015222,0.1933,16000
-panas,panas_002.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.015113,0.1507,16000
-panas,panas_003.wav,MASALAH,Terlalu banyak silence (82.4% > 70%),2.0,0.352,82.4,0.053893,0.6247,16000
-panas,panas_004.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.007252,0.0675,16000
-panas,panas_005.wav,MASALAH,Terlalu banyak silence (82.4% > 70%),2.0,0.352,82.4,0.032253,0.5099,16000
 panas,panas_006.wav,OK,,2.0,0.608,69.6,0.074798,0.982,16000
 panas,panas_007.wav,OK,,2.0,0.736,63.2,0.104399,0.7613,16000
 panas,panas_008.wav,OK,,2.0,1.12,44.0,0.09964,0.9171,16000
@@ -284,29 +232,28 @@ panas,panas_018.wav,OK,,2.0,0.672,66.4,0.085042,0.6331,16000
 panas,panas_019.wav,OK,,2.0,0.896,55.2,0.084082,0.557,16000
 panas,panas_020.wav,OK,,2.0,1.6,20.0,0.11927,0.6276,16000
 panas,panas_021.wav,OK,,2.0,0.832,58.4,0.109621,0.9938,16000
+panas,panas_022.wav,OK,,2.0,0.784,60.8,0.083731,0.7682,16000
 panas,panas_023.wav,OK,,2.0,0.752,62.4,0.04524,0.5424,16000
+panas,panas_024.wav,OK,,2.0,0.768,61.6,0.08285,0.8974,16000
 panas,panas_025.wav,OK,,2.0,0.768,61.6,0.037618,0.6205,16000
-keringat,keringat_001.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.023558,0.17,16000
-keringat,keringat_002.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.031537,0.3447,16000
 keringat,keringat_003.wav,OK,,2.0,0.64,68.0,0.066299,0.5341,16000
-keringat,keringat_004.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.013825,0.1208,16000
-keringat,keringat_005.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.020431,0.2244,16000
 keringat,keringat_006.wav,OK,,2.0,0.64,68.0,0.110303,0.9408,16000
 keringat,keringat_007.wav,OK,,2.0,0.864,56.8,0.106847,0.7917,16000
 keringat,keringat_008.wav,OK,,2.0,0.832,58.4,0.101529,0.8135,16000
-keringat,keringat_009.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.08421,0.993,16000
 keringat,keringat_010.wav,OK,,2.0,1.024,48.8,0.120197,0.7977,16000
 keringat,keringat_011.wav,OK,,1.707,1.088,36.3,0.044269,0.4822,16000
 keringat,keringat_012.wav,OK,,1.963,0.736,62.5,0.0431,0.5009,16000
 keringat,keringat_013.wav,OK,,1.621,0.544,66.4,0.03204,0.5049,16000
 keringat,keringat_014.wav,OK,,2.56,1.664,35.0,0.066133,0.2577,16000
 keringat,keringat_015.wav,OK,,2.389,0.832,65.2,0.038481,0.4044,16000
-keringat,keringat_016.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.077339,0.6593,16000
 keringat,keringat_017.wav,OK,,2.0,0.768,61.6,0.099318,0.5546,16000
 keringat,keringat_018.wav,OK,,2.0,1.312,34.4,0.123827,0.5527,16000
 keringat,keringat_019.wav,OK,,2.0,0.64,68.0,0.085187,0.5553,16000
 keringat,keringat_020.wav,OK,,2.0,0.96,52.0,0.104076,0.5326,16000
 keringat,keringat_021.wav,OK,,2.0,0.848,57.6,0.074424,0.7125,16000
+keringat,keringat_022.wav,OK,,2.0,0.816,59.2,0.032223,0.2775,16000
+keringat,keringat_023.wav,OK,,2.0,0.832,58.4,0.053152,0.7848,16000
+keringat,keringat_024.wav,OK,,2.0,0.8,60.0,0.047469,0.4812,16000
 keringat,keringat_025.wav,OK,,2.0,0.704,64.8,0.113895,0.9948,16000
 berdebar,berdebar_001.wav,OK,,2.0,0.832,58.4,0.029857,0.2353,16000
 berdebar,berdebar_002.wav,OK,,2.0,0.736,63.2,0.014694,0.1154,16000
@@ -326,17 +273,15 @@ berdebar,berdebar_015.wav,OK,,2.0,2.0,0.0,0.005333,0.0476,16000
 berdebar,berdebar_016.wav,OK,,2.0,0.896,55.2,0.093937,0.7733,16000
 berdebar,berdebar_017.wav,OK,,2.0,1.12,44.0,0.093818,0.7487,16000
 berdebar,berdebar_018.wav,OK,,2.0,0.832,58.4,0.082734,0.7187,16000
-berdebar,berdebar_019.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.066889,0.6905,16000
 berdebar,berdebar_020.wav,OK,,2.0,1.44,28.0,0.107594,0.6894,16000
-kebas,kebas_001.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.031157,0.3527,16000
-kebas,kebas_002.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.016015,0.1581,16000
-kebas,kebas_003.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.065197,0.7166,16000
-kebas,kebas_004.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.016178,0.1683,16000
-kebas,kebas_005.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.024621,0.3361,16000
+berdebar,berdebar_021.wav,OK,,2.0,0.928,53.6,0.061132,0.818,16000
+berdebar,berdebar_022.wav,OK,,2.0,0.864,56.8,0.064802,0.96,16000
+berdebar,berdebar_023.wav,OK,,2.0,0.896,55.2,0.079897,0.9926,16000
+berdebar,berdebar_024.wav,OK,,2.0,0.8,60.0,0.118169,0.9584,16000
+berdebar,berdebar_025.wav,OK,,2.0,0.8,60.0,0.075413,0.9149,16000
 kebas,kebas_006.wav,OK,,2.0,1.152,42.4,0.082558,0.5059,16000
 kebas,kebas_007.wav,OK,,2.0,0.768,61.6,0.088304,0.6866,16000
 kebas,kebas_008.wav,OK,,2.0,1.216,39.2,0.099279,0.7143,16000
-kebas,kebas_009.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.073996,0.9915,16000
 kebas,kebas_010.wav,OK,,2.0,1.024,48.8,0.102845,0.7517,16000
 kebas,kebas_011.wav,OK,,2.133,0.725,66.0,0.047163,0.59,16000
 kebas,kebas_012.wav,OK,,2.219,0.992,55.3,0.041481,0.5429,16000
@@ -347,16 +292,11 @@ kebas,kebas_016.wav,OK,,2.0,0.608,69.6,0.064415,0.6435,16000
 kebas,kebas_017.wav,OK,,2.0,0.8,60.0,0.077467,0.5922,16000
 kebas,kebas_018.wav,OK,,2.0,0.64,68.0,0.080031,0.5555,16000
 kebas,kebas_019.wav,OK,,2.0,0.768,61.6,0.062035,0.593,16000
-kebas,kebas_020.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.065453,0.7422,16000
 kebas,kebas_021.wav,OK,,2.0,0.736,63.2,0.052844,0.6418,16000
-kebas,kebas_022.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.027121,0.4738,16000
+kebas,kebas_022.wav,OK,,2.0,0.688,65.6,0.065463,0.555,16000
+kebas,kebas_023.wav,OK,,2.0,0.848,57.6,0.071047,0.5275,16000
+kebas,kebas_024.wav,OK,,2.0,0.688,65.6,0.152782,0.9941,16000
 kebas,kebas_025.wav,OK,,2.0,0.64,68.0,0.119928,0.9935,16000
-kram,kram_001.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.026248,0.3067,16000
-kram,kram_002.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.019518,0.2232,16000
-kram,kram_003.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.081164,0.9224,16000
-kram,kram_004.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.033151,0.3586,16000
-kram,kram_005.wav,MASALAH,Terlalu banyak silence (80.8% > 70%),2.0,0.384,80.8,0.043929,0.5142,16000
-kram,kram_006.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.094419,0.9379,16000
 kram,kram_007.wav,OK,,2.0,0.64,68.0,0.075365,0.5717,16000
 kram,kram_008.wav,OK,,2.0,0.832,58.4,0.092561,0.5515,16000
 kram,kram_009.wav,OK,,2.0,0.608,69.6,0.088625,0.809,16000
@@ -365,24 +305,18 @@ kram,kram_011.wav,OK,,1.621,0.672,58.6,0.092518,0.9996,16000
 kram,kram_012.wav,OK,,2.389,1.024,57.1,0.085463,1.0024,16000
 kram,kram_013.wav,OK,,2.389,1.088,54.5,0.08719,0.7873,16000
 kram,kram_014.wav,OK,,1.536,0.48,68.8,0.062861,0.9778,16000
-kram,kram_015.wav,MASALAH,Terlalu banyak silence (71.6% > 70%),2.816,0.8,71.6,0.057284,0.9492,16000
-kram,kram_016.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.069519,0.7303,16000
+kram,kram_016.wav,MASALAH,Volume terlalu pelan (RMS=0.000021 < 0.002) | Amplitudo maksimum sangat kecil (0.0002) — kemungkinan file kosong,2.0,2.0,0.0,2.1e-05,0.0002,16000
 kram,kram_017.wav,OK,,2.0,0.736,63.2,0.084587,0.6001,16000
 kram,kram_018.wav,OK,,2.0,0.704,64.8,0.065111,0.3959,16000
 kram,kram_019.wav,OK,,2.0,0.864,56.8,0.083253,0.5987,16000
 kram,kram_020.wav,OK,,2.0,0.608,69.6,0.069535,0.5853,16000
-kram,kram_021.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.112325,0.9931,16000
-kram,kram_023.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.056965,0.676,16000
+kram,kram_021.wav,OK,,2.0,0.752,62.4,0.107962,0.994,16000
+kram,kram_023.wav,OK,,2.0,0.784,60.8,0.065228,0.6265,16000
 kram,kram_024.wav,OK,,2.0,0.832,58.4,0.056725,0.4325,16000
-sakit,sakit_001.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.012905,0.2386,16000
-sakit,sakit_002.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.008851,0.1145,16000
-sakit,sakit_003.wav,MASALAH,Terlalu banyak silence (82.4% > 70%),2.0,0.352,82.4,0.024415,0.422,16000
-sakit,sakit_004.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.012451,0.1501,16000
-sakit,sakit_005.wav,MASALAH,Terlalu banyak silence (77.6% > 70%),2.0,0.448,77.6,0.010518,0.1612,16000
+kram,kram_025.wav,OK,,2.0,0.72,64.0,0.129909,0.994,16000
 sakit,sakit_006.wav,OK,,2.0,0.8,60.0,0.085365,0.6974,16000
 sakit,sakit_007.wav,OK,,2.0,0.608,69.6,0.057651,0.69,16000
 sakit,sakit_008.wav,OK,,2.0,1.248,37.6,0.084298,0.4341,16000
-sakit,sakit_009.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.077351,0.9878,16000
 sakit,sakit_010.wav,OK,,2.0,1.088,45.6,0.091985,0.8773,16000
 sakit,sakit_011.wav,OK,,1.195,0.576,51.8,0.067948,0.8199,16000
 sakit,sakit_012.wav,OK,,2.133,1.696,20.5,0.0646,0.613,16000
@@ -390,15 +324,14 @@ sakit,sakit_013.wav,OK,,1.877,0.64,65.9,0.023143,0.348,16000
 sakit,sakit_014.wav,OK,,1.621,0.672,58.6,0.01941,0.3687,16000
 sakit,sakit_015.wav,OK,,1.621,0.704,56.6,0.017521,0.3211,16000
 sakit,sakit_016.wav,OK,,2.0,0.768,61.6,0.07094,0.6333,16000
-sakit,sakit_017.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.062111,0.6824,16000
 sakit,sakit_018.wav,OK,,2.0,0.64,68.0,0.045,0.4146,16000
 sakit,sakit_019.wav,OK,,2.0,0.864,56.8,0.07287,0.4712,16000
 sakit,sakit_020.wav,OK,,2.0,0.768,61.6,0.083109,0.6307,16000
 sakit,sakit_021.wav,OK,,2.0,0.64,68.0,0.084001,0.9937,16000
-sakit,sakit_022.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.019791,0.3865,16000
-sakit,sakit_023.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.021099,0.3032,16000
-sakit,sakit_024.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.018377,0.3855,16000
-sakit,sakit_025.wav,MASALAH,Terlalu banyak silence (79.2% > 70%),2.0,0.416,79.2,0.011012,0.2057,16000
+sakit,sakit_022.wav,OK,,2.0,0.64,68.0,0.033643,0.345,16000
+sakit,sakit_023.wav,OK,,2.0,0.72,64.0,0.107073,0.9963,16000
+sakit,sakit_024.wav,OK,,2.0,0.736,63.2,0.122164,0.9934,16000
+sakit,sakit_025.wav,OK,,2.0,0.64,68.0,0.049813,0.4735,16000
 tenggorokan,tenggorokan_001.wav,OK,,2.0,0.992,50.4,0.033705,0.2281,16000
 tenggorokan,tenggorokan_002.wav,OK,,2.0,0.896,55.2,0.022817,0.1678,16000
 tenggorokan,tenggorokan_003.wav,OK,,2.0,0.736,63.2,0.068374,0.4975,16000
@@ -419,15 +352,14 @@ tenggorokan,tenggorokan_017.wav,OK,,2.0,1.024,48.8,0.093526,0.4865,16000
 tenggorokan,tenggorokan_018.wav,OK,,2.0,1.12,44.0,0.0856,0.4506,16000
 tenggorokan,tenggorokan_019.wav,OK,,2.0,0.8,60.0,0.059861,0.3723,16000
 tenggorokan,tenggorokan_020.wav,OK,,2.0,1.12,44.0,0.105919,0.5607,16000
-hidung,hidung_001.wav,MASALAH,Terlalu banyak silence (71.2% > 70%),2.0,0.576,71.2,0.019785,0.1464,16000
-hidung,hidung_002.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.029821,0.2405,16000
-hidung,hidung_003.wav,MASALAH,Terlalu banyak silence (76.0% > 70%),2.0,0.48,76.0,0.034252,0.2805,16000
-hidung,hidung_004.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.034411,0.3036,16000
-hidung,hidung_005.wav,MASALAH,Terlalu banyak silence (72.8% > 70%),2.0,0.544,72.8,0.013693,0.1091,16000
+tenggorokan,tenggorokan_021.wav,OK,,2.0,0.96,52.0,0.132426,0.9931,16000
+tenggorokan,tenggorokan_022.wav,OK,,2.0,0.816,59.2,0.106395,0.9927,16000
+tenggorokan,tenggorokan_023.wav,OK,,2.0,0.736,63.2,0.108799,0.9937,16000
+tenggorokan,tenggorokan_024.wav,OK,,2.0,0.944,52.8,0.143062,0.9941,16000
+tenggorokan,tenggorokan_025.wav,OK,,2.0,0.912,54.4,0.13775,0.9909,16000
 hidung,hidung_006.wav,OK,,2.0,0.608,69.6,0.090791,0.8124,16000
 hidung,hidung_007.wav,OK,,2.0,0.768,61.6,0.117255,0.9106,16000
 hidung,hidung_008.wav,OK,,2.0,1.216,39.2,0.099077,0.7048,16000
-hidung,hidung_009.wav,MASALAH,Terlalu banyak silence (74.4% > 70%),2.0,0.512,74.4,0.107313,0.9916,16000
 hidung,hidung_010.wav,OK,,2.0,0.992,50.4,0.100473,0.6811,16000
 hidung,hidung_011.wav,OK,,1.451,1.259,13.2,0.132585,0.9858,16000
 hidung,hidung_012.wav,OK,,1.536,1.248,18.8,0.090974,0.8224,16000
@@ -440,6 +372,7 @@ hidung,hidung_018.wav,OK,,2.0,0.992,50.4,0.105401,0.4799,16000
 hidung,hidung_019.wav,OK,,2.0,0.736,63.2,0.091152,0.516,16000
 hidung,hidung_020.wav,OK,,2.0,0.768,61.6,0.078219,0.5283,16000
 hidung,hidung_021.wav,OK,,2.0,0.736,63.2,0.063778,0.5349,16000
-hidung,hidung_022.wav,MASALAH,Terlalu banyak silence (72.0% > 70%),2.0,0.56,72.0,0.034984,0.2985,16000
+hidung,hidung_022.wav,OK,,2.0,0.96,52.0,0.089404,0.5355,16000
+hidung,hidung_023.wav,OK,,2.0,0.864,56.8,0.071864,0.5225,16000
 hidung,hidung_024.wav,OK,,2.0,0.672,66.4,0.122456,0.9928,16000
 hidung,hidung_025.wav,OK,,2.0,0.704,64.8,0.08267,0.6552,16000
