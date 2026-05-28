@@ -1,44 +1,50 @@
 ==============================================================
   LAPORAN AUDIT DATASET DOKTERKU
 ==============================================================
-  Total file  : 377
-  OK          : 375
-  Bermasalah  : 2
+  Total file  : 276
+  OK          : 273
+  Bermasalah  : 3
   Rusak       : 0
 
   Ringkasan per kelas:
   --------------------------------------------------
-  demam           OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
-  batuk           OK:11  Masalah: 1  Total:12 ← KURANG SAMPEL
-  pusing          OK:22  Masalah: 0  Total:22 ← KURANG SAMPEL
-  mual            OK:20  Masalah: 0  Total:20 ← KURANG SAMPEL
-  sesak           OK:17  Masalah: 0  Total:17 ← KURANG SAMPEL
-  nyeri           OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
-  lemas           OK:16  Masalah: 0  Total:16 ← KURANG SAMPEL
-  bersin          OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
-  diare           OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
-  muntah          OK:18  Masalah: 0  Total:18 ← KURANG SAMPEL
-  gatal           OK:23  Masalah: 0  Total:23 ← KURANG SAMPEL
-  bengkak         OK:16  Masalah: 0  Total:16 ← KURANG SAMPEL
-  panas           OK:21  Masalah: 0  Total:21 ← KURANG SAMPEL
-  keringat        OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
-  berdebar        OK:24  Masalah: 0  Total:24 ← KURANG SAMPEL
-  kebas           OK:18  Masalah: 0  Total:18 ← KURANG SAMPEL
-  kram            OK:16  Masalah: 1  Total:17 ← KURANG SAMPEL
-  sakit           OK:18  Masalah: 0  Total:18 ← KURANG SAMPEL
-  tenggorokan     OK:25  Masalah: 0  Total:25
-  hidung          OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  demam           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  batuk           OK: 9  Masalah: 2  Total:11 ← KURANG SAMPEL
+  pusing          OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  mual            OK:14  Masalah: 1  Total:15 ← KURANG SAMPEL
+  sesak           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  nyeri           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
+  lemas           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  bersin          OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  diare           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
+  muntah          OK:12  Masalah: 0  Total:12 ← KURANG SAMPEL
+  gatal           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  bengkak         OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  panas           OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
+  keringat        OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  berdebar        OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  kebas           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  kram            OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
+  sakit           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
+  tenggorokan     OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
+  hidung          OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
 
 ==============================================================
   DETAIL FILE BERMASALAH
 ==============================================================
 
-  [MASALAH] batuk/batuk_020.wav
+  [MASALAH] batuk/batuk_016.wav
     → Volume terlalu pelan (RMS=0.000027 < 0.002)
-    → Amplitudo maksimum sangat kecil (0.0003) — kemungkinan file kosong
-    durasi_aktif=2.0s  silence=0.0%  RMS=0.000027  max_amp=0.0003
+    → Amplitudo maksimum sangat kecil (0.0010) — kemungkinan file kosong
+    durasi_aktif=2.0s  silence=0.0%  RMS=0.000027  max_amp=0.001
 
-  [MASALAH] kram/kram_016.wav
-    → Volume terlalu pelan (RMS=0.000021 < 0.002)
-    → Amplitudo maksimum sangat kecil (0.0002) — kemungkinan file kosong
-    durasi_aktif=2.0s  silence=0.0%  RMS=0.000021  max_amp=0.0002
+  [MASALAH] batuk/batuk_017.wav
+    → Volume terlalu pelan (RMS=0.000152 < 0.002)
+    → Amplitudo maksimum sangat kecil (0.0032) — kemungkinan file kosong
+    durasi_aktif=1.408s  silence=29.6%  RMS=0.000152  max_amp=0.0032
+
+  [MASALAH] mual/mual_018.wav
+    → Volume terlalu pelan (RMS=0.000087 < 0.002)
+    → Terlalu banyak silence (74.4% > 70%)
+    → Amplitudo maksimum sangat kecil (0.0033) — kemungkinan file kosong
+    durasi_aktif=0.512s  silence=74.4%  RMS=0.000087  max_amp=0.0033
