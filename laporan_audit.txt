@@ -1,30 +1,30 @@
 ==============================================================
   LAPORAN AUDIT DATASET DOKTERKU
 ==============================================================
-  Total file  : 263
-  OK          : 263
+  Total file  : 360
+  OK          : 360
   Bermasalah  : 0
   Rusak       : 0
 
   Ringkasan per kelas:
   --------------------------------------------------
   demam           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  batuk           OK:10  Masalah: 0  Total:10 ← KURANG SAMPEL
-  pusing          OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  mual            OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
-  sesak           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  nyeri           OK:10  Masalah: 0  Total:10 ← KURANG SAMPEL
-  lemas           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  bersin          OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  diare           OK:11  Masalah: 0  Total:11 ← KURANG SAMPEL
-  muntah          OK:12  Masalah: 0  Total:12 ← KURANG SAMPEL
-  gatal           OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  bengkak         OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  panas           OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
-  keringat        OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  berdebar        OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  kebas           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
-  kram            OK:11  Masalah: 0  Total:11 ← KURANG SAMPEL
-  sakit           OK:13  Masalah: 0  Total:13 ← KURANG SAMPEL
-  tenggorokan     OK:14  Masalah: 0  Total:14 ← KURANG SAMPEL
-  hidung          OK:15  Masalah: 0  Total:15 ← KURANG SAMPEL
+  batuk           OK:16  Masalah: 0  Total:16 ← KURANG SAMPEL
+  pusing          OK:16  Masalah: 0  Total:16 ← KURANG SAMPEL
+  mual            OK:12  Masalah: 0  Total:12 ← KURANG SAMPEL
+  sesak           OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  nyeri           OK:18  Masalah: 0  Total:18 ← KURANG SAMPEL
+  lemas           OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  bersin          OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  diare           OK:18  Masalah: 0  Total:18 ← KURANG SAMPEL
+  muntah          OK:17  Masalah: 0  Total:17 ← KURANG SAMPEL
+  gatal           OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  bengkak         OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  panas           OK:20  Masalah: 0  Total:20 ← KURANG SAMPEL
+  keringat        OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  berdebar        OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  kebas           OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  kram            OK:18  Masalah: 0  Total:18 ← KURANG SAMPEL
+  sakit           OK:19  Masalah: 0  Total:19 ← KURANG SAMPEL
+  tenggorokan     OK:20  Masalah: 0  Total:20 ← KURANG SAMPEL
+  hidung          OK:20  Masalah: 0  Total:20 ← KURANG SAMPEL
