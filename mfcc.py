@@ -48,7 +48,7 @@ def load_audio(path, sr=SAMPLE_RATE, durasi_max=DURASI_MAX):
     audio, _ = librosa.load(path, sr=sr, mono=True)
 
     # Trim silence (top_db=20 dB threshold)
-    audio, _ = librosa.effects.trim(audio, top_db=20)
+    audio, _ = librosa.effects.trim(audio, top_db=30)
 
     # Target panjang dalam sampel
     target_len = int(durasi_max * sr)
