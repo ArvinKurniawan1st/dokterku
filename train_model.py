@@ -45,6 +45,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
+from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 
 # ─────────────────────────────────────────────
 # KONFIGURASI
@@ -226,6 +228,143 @@ def train_svm(X_train, y_train, X_test, y_test, label_names):
     return dict(nama="SVM (RBF, C=10)", akurasi=acc, f1=f1,
                 cm=cm, report=report, durasi=dur)
 
+
+def train_rf(X_train, y_train, X_test, y_test, label_names):
+
+    print("\n" + "─" * 55)
+    print("  [RF] Training Random Forest ...")
+    print("─" * 55)
+
+    t0 = time.time()
+
+    rf = RandomForestClassifier(
+        n_estimators=500,
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        bootstrap=True,
+        n_jobs=-1,
+        random_state=42
+    )
+
+    rf.fit(X_train, y_train)
+
+    dur = time.time() - t0
+
+    y_pred = rf.predict(X_test)
+
+    acc = accuracy_score(y_test, y_pred)
+
+    f1 = f1_score(
+        y_test,
+        y_pred,
+        average="weighted",
+        zero_division=0
+    )
+
+    report = classification_report(
+        y_test,
+        y_pred,
+        target_names=label_names,
+        zero_division=0
+    )
+
+    cm = confusion_matrix(y_test, y_pred)
+
+    print(f"Akurasi  : {acc*100:.2f}%")
+    print(f"F1 score : {f1*100:.2f}%")
+    print(f"Waktu    : {dur:.1f}s")
+
+    with open("model_rf.pkl", "wb") as f:
+        pickle.dump({
+            "model": rf,
+            "label_names": label_names
+        }, f)
+
+    print("✓ model_rf.pkl")
+
+    return dict(
+        nama="Random Forest",
+        akurasi=acc,
+        f1=f1,
+        cm=cm,
+        report=report,
+        durasi=dur
+    )
+
+def train_xgb(X_train, y_train, X_test, y_test, label_names):
+
+    print("\n" + "─" * 55)
+    print("  [XGB] Training XGBoost ...")
+    print("─" * 55)
+
+    t0 = time.time()
+
+    xgb = XGBClassifier(
+        objective="multi:softprob",
+        num_class=len(label_names),
+
+        n_estimators=300,
+        max_depth=6,
+
+        learning_rate=0.05,
+
+        subsample=0.8,
+        colsample_bytree=0.8,
+
+        min_child_weight=3,
+
+        eval_metric="mlogloss",
+
+        tree_method="hist",
+
+        random_state=SEED
+    )
+
+    xgb.fit(X_train, y_train)
+
+    dur = time.time() - t0
+
+    y_pred = xgb.predict(X_test)
+
+    acc = accuracy_score(y_test, y_pred)
+
+    f1 = f1_score(
+        y_test,
+        y_pred,
+        average="weighted",
+        zero_division=0
+    )
+
+    report = classification_report(
+        y_test,
+        y_pred,
+        target_names=label_names,
+        zero_division=0
+    )
+
+    cm = confusion_matrix(y_test, y_pred)
+
+    print(f"Akurasi  : {acc*100:.2f}%")
+    print(f"F1 score : {f1*100:.2f}%")
+    print(f"Waktu    : {dur:.1f}s")
+
+    with open("model_xgb.pkl", "wb") as f:
+        pickle.dump({
+            "model": xgb,
+            "label_names": label_names
+        }, f)
+
+    print("✓ model_xgb.pkl")
+
+    return dict(
+        nama="XGBoost",
+        akurasi=acc,
+        f1=f1,
+        cm=cm,
+        report=report,
+        durasi=dur
+    )
 
 # ─────────────────────────────────────────────
 # MODEL 2 — MLP
@@ -447,8 +586,8 @@ def train_cnn1d(X_train, y_train, X_val, y_val,
 # LAPORAN PERBANDINGAN
 # ─────────────────────────────────────────────
 
-def cetak_laporan(hasil_svm, hasil_mlp, hasil_cnn, label_names):
-    semua = [hasil_svm, hasil_mlp, hasil_cnn]
+def cetak_laporan(hasil_svm, hasil_rf, hasil_xgb, hasil_mlp, hasil_cnn, label_names):
+    semua = [hasil_svm, hasil_rf, hasil_xgb, hasil_mlp, hasil_cnn]
     lines = [
         "=" * 60,
         "  LAPORAN PERBANDINGAN MODEL — DOKTERKU",
@@ -483,9 +622,22 @@ def cetak_laporan(hasil_svm, hasil_mlp, hasil_cnn, label_names):
     print("  ✓ Laporan → hasil_training.txt")
 
     # Simpan nama model terbaik
-    tipe = ("svm" if "SVM" in terbaik["nama"]
-            else "mlp" if "MLP" in terbaik["nama"]
-            else "cnn1d")
+    nama = terbaik["nama"].lower()
+
+    if "xgboost" in nama:
+        tipe = "xgb"
+
+    elif "random forest" in nama:
+        tipe = "rf"
+
+    elif "mlp" in nama:
+        tipe = "mlp"
+
+    elif "svm" in nama:
+        tipe = "svm"
+
+    else:
+        tipe = "cnn1d"
     with open("model_terbaik.txt", "w") as f:
         f.write(tipe)
     print(f"  ✓ Model terbaik → model_terbaik.txt  [{tipe}]")
@@ -549,10 +701,50 @@ def load_model_terbaik():
         label_names = pkg["label_names"]
 
         def prediksi(fitur):
-            fs   = scaler.transform([fitur])
-            kata = model.predict(fs)[0]
+
+            fs = scaler.transform([fitur])
+
+            idx = int(model.predict(fs)[0])
+
             prob = model.predict_proba(fs)[0].max()
-            return kata, float(prob)
+
+            return label_names[idx], float(prob)
+        
+    elif tipe == "rf":
+
+        with open("model_rf.pkl", "rb") as f:
+            pkg = pickle.load(f)
+
+        model = pkg["model"]
+        label_names = pkg["label_names"]
+
+        def prediksi(fitur):
+
+            fs = scaler.transform([fitur])
+
+            idx = model.predict(fs)[0]
+
+            prob = model.predict_proba(fs)[0].max()
+
+            return label_names[idx], float(prob)
+    
+    elif tipe == "xgb":
+
+        with open("model_xgb.pkl", "rb") as f:
+            pkg = pickle.load(f)
+
+        model = pkg["model"]
+        label_names = pkg["label_names"]
+
+        def prediksi(fitur):
+
+            fs = scaler.transform([fitur])
+
+            idx = model.predict(fs)[0]
+
+            prob = model.predict_proba(fs)[0].max()
+
+            return label_names[idx], float(prob)
 
     elif tipe == "mlp":
         ckpt = torch.load("model_mlp.pt", map_location="cpu")
@@ -605,19 +797,38 @@ def main():
     X_tr, X_va, X_te, scaler = scale_data(X_train, X_val, X_test)
 
     hasil_svm = train_svm(X_tr, y_train, X_te, y_test, label_names)
+    hasil_rf = train_rf(
+        X_tr,
+        y_train,
+        X_te,
+        y_test,
+        label_names
+    )
+    hasil_xgb = train_xgb(
+        X_tr,
+        y_train,
+        X_te,
+        y_test,
+        label_names
+    )
     hasil_mlp = train_mlp(X_tr, y_train, X_va, y_val,
                           X_te, y_test, label_names)
     hasil_cnn = train_cnn1d(X_tr, y_train, X_va, y_val,
                             X_te, y_test, label_names)
 
-    terbaik = cetak_laporan(hasil_svm, hasil_mlp, hasil_cnn, label_names)
+    terbaik = cetak_laporan(hasil_svm, hasil_rf, hasil_xgb, hasil_mlp, hasil_cnn, label_names)
     plot_history(hasil_mlp, hasil_cnn)
 
     print("\n" + "=" * 55)
     print("  File yang dihasilkan:")
-    print("  • model_svm.pkl        • model_mlp.pt")
-    print("  • model_cnn1d.pt       • scaler.pkl")
-    print("  • model_terbaik.txt    • hasil_training.txt")
+    print("  • model_svm.pkl")
+    print("  • model_rf.pkl")
+    print("  • model_xgb.pkl")
+    print("  • model_mlp.pt")
+    print("  • model_cnn1d.pt")
+    print("  • scaler.pkl")
+    print("  • model_terbaik.txt")
+    print("  • hasil_training.txt")
     print("  • training_history.png")
     print("=" * 55)
     print(f"\n  ★ Model terbaik : {terbaik['nama']}")

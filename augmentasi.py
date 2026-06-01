@@ -119,6 +119,38 @@ def aug_time_stretch(audio, rate, sr=SAMPLE_RATE):
         stretched = stretched[:target]
     return stretched
 
+def aug_room_reverb(audio):
+
+    delays = [0.02, 0.05, 0.08]
+    gains  = [0.35, 0.20, 0.10]
+
+    output = audio.copy()
+
+    for d, g in zip(delays, gains):
+
+        delay = int(d * SAMPLE_RATE)
+
+        echo = np.zeros_like(audio)
+
+        echo[delay:] = audio[:-delay]
+
+        output += g * echo
+
+    peak = np.max(np.abs(output))
+
+    if peak > 0:
+        output /= peak
+
+    return output.astype(np.float32)
+
+def aug_gain(audio):
+
+    gain = np.random.uniform(
+        0.7,
+        1.3
+    )
+
+    return audio * gain
 
 # ─────────────────────────────────────────────
 # CEK APAKAH FILE AUG SUDAH ADA
@@ -130,7 +162,7 @@ def sudah_ada(path_asli):
     Berguna untuk resume jika script dihentikan di tengah jalan.
     """
     base = path_asli.replace(".wav", "")
-    suffixes = ["_aug_noise", "_aug_pu", "_aug_pd", "_aug_slow", "_aug_fast"]
+    suffixes = ["_aug_noise", "_aug_pu", "_aug_pd", "_aug_slow", "_aug_fast", "_aug_reverb", "_aug_gain"]
     return all(os.path.exists(base + s + ".wav") for s in suffixes)
 
 
@@ -195,6 +227,20 @@ def augmentasi_kelas(kata, folder_kelas, skip_existing=True):
             simpan(
                 aug_time_stretch(audio, STRETCH_FAST),
                 os.path.join(folder_kelas, base_name + "_aug_fast.wav")
+            )
+
+            # 6. Reverb
+            simpan(
+                aug_room_reverb(audio),
+                os.path.join(folder_kelas,
+                            base_name + "_aug_reverb.wav")
+            )
+
+            # 7. Gain
+            simpan(
+                aug_gain(audio),
+                os.path.join(folder_kelas,
+                            base_name + "_aug_gain.wav")
             )
 
             diproses += 1

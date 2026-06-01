@@ -3,14 +3,16 @@
 ============================================================
   Model                     Akurasi         F1    Waktu
   ------------------------------------------------------
-  SVM (RBF, C=10)            80.00%     80.02%     4.2s
-  MLP (256-128-64)           80.00%     80.10%    27.1s
-  CNN 1D (32-64-128)         26.50%     25.02%   103.2s
+  SVM (RBF, C=10)            82.75%     82.74%     9.1s
+  Random Forest              88.62%     88.60%     5.9s
+  XGBoost                    85.12%     85.10%    42.5s
+  MLP (256-128-64)           86.00%     85.93%    49.5s
+  CNN 1D (32-64-128)         40.88%     39.28%   166.6s
   ------------------------------------------------------
 
-  ★ Model terbaik : SVM (RBF, C=10)
-    Akurasi       : 80.00%
-    F1 score      : 80.02%
+  ★ Model terbaik : Random Forest
+    Akurasi       : 88.62%
+    F1 score      : 88.60%
 
 ============================================================
   CLASSIFICATION REPORT PER MODEL
@@ -19,85 +21,143 @@
   [SVM (RBF, C=10)]
               precision    recall  f1-score   support
 
-       demam       0.70      0.87      0.78        30
-       batuk       0.96      0.83      0.89        30
-      pusing       0.93      0.83      0.88        30
-        mual       0.74      0.83      0.78        30
-       sesak       0.90      0.90      0.90        30
-       nyeri       0.84      0.87      0.85        30
-       lemas       0.83      0.67      0.74        30
-      bersin       0.81      0.87      0.84        30
-       diare       0.93      0.87      0.90        30
-      muntah       0.58      0.70      0.64        30
-       gatal       0.94      0.50      0.65        30
-     bengkak       0.69      0.73      0.71        30
-       panas       0.82      0.77      0.79        30
-    keringat       0.71      0.80      0.75        30
-    berdebar       0.74      0.83      0.78        30
-       kebas       0.77      0.80      0.79        30
-        kram       0.77      0.80      0.79        30
-       sakit       0.93      0.83      0.88        30
- tenggorokan       0.76      0.83      0.79        30
-      hidung       0.90      0.87      0.88        30
+       demam       0.86      0.75      0.80        40
+       batuk       0.85      0.82      0.84        40
+      pusing       0.94      0.85      0.89        40
+        mual       0.82      0.80      0.81        40
+       sesak       0.88      0.75      0.81        40
+       nyeri       0.90      0.90      0.90        40
+       lemas       0.84      0.78      0.81        40
+      bersin       0.90      0.95      0.93        40
+       diare       1.00      0.93      0.96        40
+      muntah       0.84      0.78      0.81        40
+       gatal       0.71      0.62      0.67        40
+     bengkak       0.72      0.78      0.75        40
+       panas       0.86      0.80      0.83        40
+    keringat       0.80      0.80      0.80        40
+    berdebar       0.81      0.95      0.87        40
+       kebas       0.67      0.78      0.72        40
+        kram       0.74      0.88      0.80        40
+       sakit       0.84      0.90      0.87        40
+ tenggorokan       0.77      0.82      0.80        40
+      hidung       0.86      0.93      0.89        40
 
-    accuracy                           0.80       600
-   macro avg       0.81      0.80      0.80       600
-weighted avg       0.81      0.80      0.80       600
+    accuracy                           0.83       800
+   macro avg       0.83      0.83      0.83       800
+weighted avg       0.83      0.83      0.83       800
+
+
+  [Random Forest]
+              precision    recall  f1-score   support
+
+       demam       0.95      0.88      0.91        40
+       batuk       0.82      0.82      0.82        40
+      pusing       0.97      0.90      0.94        40
+        mual       0.97      0.80      0.88        40
+       sesak       0.84      0.90      0.87        40
+       nyeri       0.86      0.93      0.89        40
+       lemas       0.95      0.97      0.96        40
+      bersin       0.87      1.00      0.93        40
+       diare       0.95      0.95      0.95        40
+      muntah       0.75      0.75      0.75        40
+       gatal       0.82      0.80      0.81        40
+     bengkak       0.89      0.80      0.84        40
+       panas       0.88      0.90      0.89        40
+    keringat       0.97      0.88      0.92        40
+    berdebar       0.88      0.95      0.92        40
+       kebas       0.87      0.82      0.85        40
+        kram       0.79      0.95      0.86        40
+       sakit       0.97      0.95      0.96        40
+ tenggorokan       0.87      0.82      0.85        40
+      hidung       0.90      0.95      0.93        40
+
+    accuracy                           0.89       800
+   macro avg       0.89      0.89      0.89       800
+weighted avg       0.89      0.89      0.89       800
+
+
+  [XGBoost]
+              precision    recall  f1-score   support
+
+       demam       0.89      0.82      0.86        40
+       batuk       0.83      0.88      0.85        40
+      pusing       0.87      0.85      0.86        40
+        mual       0.91      0.75      0.82        40
+       sesak       0.89      0.85      0.87        40
+       nyeri       0.88      0.90      0.89        40
+       lemas       0.87      0.85      0.86        40
+      bersin       0.78      0.95      0.85        40
+       diare       0.93      0.93      0.93        40
+      muntah       0.75      0.68      0.71        40
+       gatal       0.81      0.85      0.83        40
+     bengkak       0.73      0.82      0.78        40
+       panas       0.87      0.85      0.86        40
+    keringat       0.92      0.88      0.90        40
+    berdebar       0.79      0.95      0.86        40
+       kebas       0.80      0.82      0.81        40
+        kram       0.80      0.88      0.83        40
+       sakit       0.94      0.82      0.88        40
+ tenggorokan       0.91      0.75      0.82        40
+      hidung       0.93      0.95      0.94        40
+
+    accuracy                           0.85       800
+   macro avg       0.86      0.85      0.85       800
+weighted avg       0.86      0.85      0.85       800
 
 
   [MLP (256-128-64)]
               precision    recall  f1-score   support
 
-       demam       0.81      0.70      0.75        30
-       batuk       0.87      0.87      0.87        30
-      pusing       0.83      0.80      0.81        30
-        mual       0.89      0.80      0.84        30
-       sesak       0.90      0.90      0.90        30
-       nyeri       0.80      0.80      0.80        30
-       lemas       0.74      0.67      0.70        30
-      bersin       0.71      0.83      0.77        30
-       diare       0.92      0.80      0.86        30
-      muntah       0.70      0.77      0.73        30
-       gatal       0.79      0.63      0.70        30
-     bengkak       0.58      0.73      0.65        30
-       panas       0.85      0.93      0.89        30
-    keringat       0.68      0.90      0.77        30
-    berdebar       0.86      0.80      0.83        30
-       kebas       0.82      0.77      0.79        30
-        kram       0.92      0.77      0.84        30
-       sakit       0.89      0.80      0.84        30
- tenggorokan       0.86      0.83      0.85        30
-      hidung       0.77      0.90      0.83        30
+       demam       0.86      0.80      0.83        40
+       batuk       0.82      0.78      0.79        40
+      pusing       0.97      0.80      0.88        40
+        mual       0.84      0.80      0.82        40
+       sesak       0.90      0.88      0.89        40
+       nyeri       0.90      0.93      0.91        40
+       lemas       0.89      0.97      0.93        40
+      bersin       0.84      0.90      0.87        40
+       diare       0.97      0.97      0.97        40
+      muntah       0.85      0.72      0.78        40
+       gatal       0.85      0.85      0.85        40
+     bengkak       0.80      0.82      0.81        40
+       panas       0.91      0.75      0.82        40
+    keringat       0.89      0.80      0.84        40
+    berdebar       0.84      0.93      0.88        40
+       kebas       0.80      0.90      0.85        40
+        kram       0.74      0.93      0.82        40
+       sakit       0.90      0.93      0.91        40
+ tenggorokan       0.86      0.80      0.83        40
+      hidung       0.83      0.95      0.88        40
 
-    accuracy                           0.80       600
-   macro avg       0.81      0.80      0.80       600
-weighted avg       0.81      0.80      0.80       600
+    accuracy                           0.86       800
+   macro avg       0.86      0.86      0.86       800
+weighted avg       0.86      0.86      0.86       800
 
 
   [CNN 1D (32-64-128)]
               precision    recall  f1-score   support
 
-       demam       0.32      0.33      0.33        30
-       batuk       0.23      0.30      0.26        30
-      pusing       0.27      0.40      0.32        30
-        mual       0.30      0.20      0.24        30
-       sesak       0.47      0.27      0.34        30
-       nyeri       0.43      0.60      0.50        30
-       lemas       0.26      0.17      0.20        30
-      bersin       0.21      0.40      0.28        30
-       diare       0.30      0.43      0.36        30
-      muntah       0.00      0.00      0.00        30
-       gatal       0.19      0.10      0.13        30
-     bengkak       0.10      0.07      0.08        30
-       panas       0.25      0.10      0.14        30
-    keringat       0.14      0.03      0.05        30
-    berdebar       0.12      0.37      0.18        30
-       kebas       0.20      0.23      0.22        30
-        kram       0.50      0.17      0.25        30
-       sakit       0.35      0.37      0.36        30
- tenggorokan       0.50      0.60      0.55        30
-      hidung       0.31      0.17      0.22        30
+       demam       0.29      0.28      0.28        40
+       batuk       0.35      0.35      0.35        40
+      pusing       0.46      0.68      0.55        40
+        mual       0.74      0.35      0.47        40
+       sesak       0.50      0.47      0.49        40
+       nyeri       0.56      0.78      0.65        40
+       lemas       0.45      0.23      0.30        40
+      bersin       0.33      0.78      0.46        40
+       diare       0.54      0.62      0.58        40
+      muntah       0.38      0.07      0.12        40
+       gatal       0.33      0.17      0.23        40
+     bengkak       0.45      0.12      0.20        40
+       panas       0.55      0.15      0.24        40
+    keringat       0.30      0.20      0.24        40
+    berdebar       0.24      0.68      0.35        40
+       kebas       0.24      0.55      0.33        40
+        kram       0.54      0.38      0.44        40
+       sakit       0.77      0.50      0.61        40
+ tenggorokan       0.55      0.55      0.55        40
+      hidung       0.85      0.28      0.42        40
 
-    accuracy                           0.27       600
-   macro avg       0.27      0.27      0.25       600
-weighted avg       0.27      0.27      0.25       600
+    accuracy                           0.41       800
+   macro avg       0.47      0.41      0.39       800
+weighted avg       0.47      0.41      0.39       800
