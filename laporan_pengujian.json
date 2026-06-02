@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-06-01 09:50:54",
+  "tests": [
+    {
+      "nama": "Sanity Check",
+      "status": "PASS",
+      "detail": "File dan dependency diperiksa",
+      "metrik": {}
+    },
+    {
+      "nama": "Pipeline MFCC",
+      "status": "PASS",
+      "detail": "Latency dan konsistensi",
+      "metrik": {
+        "latency_mean_ms": 157.49,
+        "latency_std_ms": 664.9,
+        "latency_max_ms": 3055.7,
+        "fitur_shape": [
+          240
+        ],
+        "konsisten": 

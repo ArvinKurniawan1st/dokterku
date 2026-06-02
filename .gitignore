@@ -1,2 +1,9 @@
 /.vscode
 /dataset
+features.npz
+model_svm.pkl
+model_rf.pkl
+model_xgb.pkl
+model_mlp.pt
+model_cnn1d.pt
+scaler.pkl
