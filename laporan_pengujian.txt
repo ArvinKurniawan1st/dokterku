@@ -1,0 +1,48 @@
+==============================================================
+  LAPORAN PENGUJIAN END-TO-END — DOKTERKU
+  Waktu: 2026-06-01 09:50:54
+==============================================================
+
+  [PASS] Sanity Check
+         File dan dependency diperiksa
+
+  [PASS] Pipeline MFCC
+         Latency dan konsistensi
+         latency_mean_ms: 157.49
+         latency_std_ms: 664.9
+         latency_max_ms: 3055.7
+         konsisten: True
+         variasi_antar: 0.4676
+
+  [PASS] Inferensi Model
+         Semua model dievaluasi
+
+  [PASS] Stress Test
+         100× prediksi berturut
+         n_prediksi: 100
+         errors: 0
+         latency_mean_ms: 104.9
+         latency_p50_ms: 104.54
+         latency_p95_ms: 107.49
+         latency_p99_ms: 113.0
+         throughput_per_s: 9.53
+         confidence_mean: 0.1615
+
+  [PASS] Robustness
+         Berbagai kondisi audio diuji
+
+  [PASS] Knowledge Base
+         20/20 OK
+         kata_ok: 20
+         kata_error: 0
+
+  [PASS] TTS
+         gTTS berhasil generate audio
+
+  [WARN] Integrasi E2E
+         ASR→KB→TTS pipeline
+
+==============================================================
+  PASS:7  WARN:1  FAIL:0  SKIP:0
+  VERDICT: SIAP PRODUKSI
+==============================================================

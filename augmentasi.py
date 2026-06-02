@@ -1,33 +1,3 @@
-"""
-DOKTERKU — Augmentasi Data Audio
-==================================
-Memperbanyak dataset dari 500 → 2.000 sampel tanpa rekam ulang.
-
-Teknik augmentasi (4 versi per file asli):
-  1. Gaussian noise    — tambah derau acak (simulasi noise mikrofon)
-  2. Pitch shift up    — naikkan nada +2 semitone (suara lebih tinggi)
-  3. Pitch shift down  — turunkan nada -2 semitone (suara lebih rendah)
-  4. Time stretch slow — perlambat 0.9× (ucapan lebih lambat)
-  5. Time stretch fast — percepat 1.1× (ucapan lebih cepat)
-
-Dari 1 file asli → 5 file augmentasi = total 6× lipat
-500 file asli × 6 = 3.000 file
-
-Output disimpan di folder yang SAMA dengan aslinya:
-  dataset/demam/demam_001.wav         ← asli (tidak diubah)
-  dataset/demam/demam_001_aug_noise.wav
-  dataset/demam/demam_001_aug_pu.wav
-  dataset/demam/demam_001_aug_pd.wav
-  dataset/demam/demam_001_aug_slow.wav
-  dataset/demam/demam_001_aug_fast.wav
-
-Instalasi:
-    pip install librosa numpy scipy soundfile tqdm
-
-Cara pakai:
-    python augmentasi_data.py
-"""
-
 import os
 import numpy as np
 import librosa
@@ -39,7 +9,7 @@ from tqdm import tqdm
 # ─────────────────────────────────────────────
 DATASET_FOLDER  = "dataset"
 SAMPLE_RATE     = 16000
-DURASI_MAX      = 2.0          # detik — sama dengan ekstraksi_mfcc.py
+DURASI_MAX      = 2.0          
 
 # Parameter augmentasi
 NOISE_FACTOR    = 0.004        # amplitudo noise Gaussian (0.002–0.008)
@@ -56,7 +26,7 @@ KATA_GEJALA = [
 ]
 
 # ─────────────────────────────────────────────
-# LOAD + PAD/TRIM (sama persis dengan ekstraksi)
+# LOAD + PAD/TRIM
 # ─────────────────────────────────────────────
 
 def load_audio(path):
@@ -72,7 +42,6 @@ def load_audio(path):
 
 def simpan(audio, path):
     """Simpan audio float32 ke .wav 16kHz."""
-    # Clip ke [-1, 1] sebelum simpan agar tidak clipping
     audio = np.clip(audio, -1.0, 1.0)
     sf.write(path, audio, SAMPLE_RATE, subtype="PCM_16")
 
@@ -176,7 +145,6 @@ def augmentasi_kelas(kata, folder_kelas, skip_existing=True):
     File asli = file yang TIDAK mengandung '_aug_' di namanya.
     """
     semua_files = sorted(os.listdir(folder_kelas))
-    # Ambil hanya file asli (bukan hasil augmentasi sebelumnya)
     files_asli  = [f for f in semua_files
                    if f.endswith(".wav") and "_aug_" not in f]
 
@@ -191,7 +159,6 @@ def augmentasi_kelas(kata, folder_kelas, skip_existing=True):
         path_asli = os.path.join(folder_kelas, fname)
         base_name = fname.replace(".wav", "")
 
-        # Resume: skip jika semua aug sudah ada
         if skip_existing and sudah_ada(path_asli):
             diskip += 1
             continue
@@ -278,7 +245,7 @@ def hitung_statistik(sebelum=True):
 
 
 # ─────────────────────────────────────────────
-# HAPUS SEMUA FILE AUGMENTASI (reset)
+# HAPUS SEMUA FILE AUGMENTASI
 # ─────────────────────────────────────────────
 
 def hapus_augmentasi():

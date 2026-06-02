@@ -1,31 +1,3 @@
-"""
-DOKTERKU — Training Model Klasifikasi (FIXED)
-==============================================
-Perbaikan:
-  [FIX 1] Hapus verbose=True di ReduceLROnPlateau (deprecated di PyTorch >= 2.2)
-  [FIX 2] Tambah diagnosis dataset otomatis (deteksi fitur konstan/kosong)
-  [FIX 3] Tambah augmentasi data (noise injection) jika sampel sedikit
-  [FIX 4] Label encoding dari string numpy ke int bersih
-
-Melatih 3 model dan membandingkan performanya:
-  1. SVM  — Support Vector Machine (RBF kernel) → baseline
-  2. MLP  — Multi-Layer Perceptron (PyTorch)
-  3. CNN1D — 1D Convolutional Neural Network (PyTorch)
-
-Input  : features.npz (hasil ekstraksi_mfcc.py)
-Output :
-  - model_svm.pkl       → model SVM terlatih
-  - model_mlp.pt        → bobot MLP terlatih
-  - model_cnn1d.pt      → bobot CNN1D terlatih
-  - hasil_training.txt  → laporan perbandingan semua model
-
-Instalasi:
-    pip install scikit-learn torch numpy matplotlib tqdm
-
-Cara pakai:
-    python training_model.py
-"""
-
 import os
 import time
 import numpy as np
@@ -72,7 +44,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 # ─────────────────────────────────────────────
-# [FIX 2] DIAGNOSIS DATASET
+# DIAGNOSIS DATASET
 # ─────────────────────────────────────────────
 
 def diagnosis_dataset(X, y, label_names):
@@ -88,7 +60,6 @@ def diagnosis_dataset(X, y, label_names):
 
     ada_masalah = False
 
-    # Cek NaN / Inf
     n_nan = np.isnan(X).sum()
     n_inf = np.isinf(X).sum()
     if n_nan > 0 or n_inf > 0:
@@ -96,13 +67,11 @@ def diagnosis_dataset(X, y, label_names):
         print("      Kemungkinan penyebab: file audio kosong atau sangat pendek.")
         print("      Solusi: hapus file .wav yang rusak, ulangi ekstraksi MFCC.")
         ada_masalah = True
-        # Ganti NaN/Inf dengan 0 agar training tetap bisa berjalan
         X = np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0)
         print("      → NaN/Inf diganti 0 untuk sementara.")
     else:
         print("  ✓ Tidak ada NaN/Inf")
 
-    # Cek fitur konstan (std ≈ 0)
     std_per_fitur = X.std(axis=0)
     n_konstan = (std_per_fitur < 1e-6).sum()
     if n_konstan > 0:
@@ -112,7 +81,6 @@ def diagnosis_dataset(X, y, label_names):
     else:
         print(f"  ✓ Variansi fitur normal (min_std={std_per_fitur.min():.4f})")
 
-    # Cek variansi keseluruhan
     print(f"  ✓ Rentang nilai fitur: [{X.min():.4f}, {X.max():.4f}]")
     print(f"  ✓ Rata-rata std fitur : {std_per_fitur.mean():.4f}")
 
@@ -130,7 +98,7 @@ def diagnosis_dataset(X, y, label_names):
     else:
         print("\n  ✓ Dataset terlihat sehat, lanjut training...\n")
 
-    return X  # dikembalikan karena mungkin sudah dibersihkan NaN
+    return X
 
 
 # ─────────────────────────────────────────────
@@ -147,9 +115,8 @@ def load_data():
     data = np.load(FEATURES_FILE, allow_pickle=True)
     X    = data["X"].astype(np.float32)
     y_raw        = data["y"]
-    label_names  = [str(l) for l in data["label_names"]]  # [FIX 4] bersihkan np.str_
+    label_names  = [str(l) for l in data["label_names"]]
 
-    # Pastikan y adalah integer 0..N-1
     le = LabelEncoder()
     le.fit(list(range(len(label_names))))
     y  = y_raw.astype(np.int32)
@@ -431,7 +398,6 @@ def train_mlp(X_train, y_train, X_val, y_val,
     optimizer = optim.Adam(model.parameters(), lr=MLP_LR, weight_decay=1e-4)
     criterion = nn.CrossEntropyLoss()
 
-    # ── [FIX 1] Hapus verbose=True ──
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, patience=10, factor=0.5
     )
@@ -530,7 +496,6 @@ def train_cnn1d(X_train, y_train, X_val, y_val,
     optimizer = optim.Adam(model.parameters(), lr=CNN_LR, weight_decay=1e-4)
     criterion = nn.CrossEntropyLoss()
 
-    # CosineAnnealing — tidak butuh verbose
     scheduler = optim.lr_scheduler.CosineAnnealingLR(
         optimizer, T_max=CNN_EPOCHS
     )
@@ -681,7 +646,7 @@ def plot_history(hasil_mlp, hasil_cnn):
 
 
 # ─────────────────────────────────────────────
-# FUNGSI LOAD MODEL TERBAIK (untuk inferensi)
+# FUNGSI LOAD MODEL TERBAIK
 # ─────────────────────────────────────────────
 
 def load_model_terbaik():
@@ -790,7 +755,6 @@ def main():
 
     X, y, label_names = load_data()
 
-    # ── [FIX 2] Diagnosis dataset sebelum training ──
     X = diagnosis_dataset(X, y, label_names)
 
     X_train, X_val, X_test, y_train, y_val, y_test = split_data(X, y)

@@ -1,26 +1,3 @@
-"""
-DOKTERKU — Aplikasi GUI Desktop
-=================================
-Antarmuka grafis lengkap dua arah ASR ↔ TTS dengan:
-  Panel ASR : Rekam suara → prediksi kata gejala → tampil saran
-  Panel TTS : Input teks → konversi ke suara → putar / simpan
-  Fitur tambahan:
-    ✓ Visualisasi MFCC real-time (grafik heatmap)
-    ✓ Confidence score bar (top 3 prediksi)
-    ✓ Integrasi ASR → TTS (hasil prediksi langsung dibacakan)
-    ✓ Pilihan kecepatan bicara TTS: lambat / normal / cepat
-    ✓ Pilihan gender suara: laki-laki / perempuan
-    ✓ Export audio TTS ke .mp3 / .wav
-
-Instalasi:
-    pip install librosa numpy scipy sounddevice soundfile
-    pip install gtts pygame matplotlib pillow
-    pip install torch scikit-learn
-
-Cara pakai:
-    python gui_dokterku.py
-"""
-
 import os
 import io
 import time
@@ -31,9 +8,6 @@ import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 import librosa
 
-# ─────────────────────────────────────────────
-# IMPORT OPSIONAL — dengan graceful fallback
-# ─────────────────────────────────────────────
 try:
     import matplotlib
     matplotlib.use("TkAgg")
@@ -44,10 +18,20 @@ except ImportError:
     MATPLOTLIB_OK = False
 
 try:
+    import edge_tts
+    import asyncio
+    EDGE_TTS_OK = True
+except ImportError:
+    EDGE_TTS_OK = False
+
+try:
     from gtts import gTTS
     GTTS_OK = True
 except ImportError:
     GTTS_OK = False
+
+
+TTS_OK = EDGE_TTS_OK or GTTS_OK
 
 try:
     import pygame
@@ -61,6 +45,19 @@ try:
     SF_OK = True
 except ImportError:
     SF_OK = False
+
+# ── Konfigurasi suara edge-tts ──
+# Suara Microsoft Neural untuk Bahasa Indonesia
+EDGE_VOICES = {
+    "perempuan": "id-ID-GadisNeural",   # Suara perempuan Indonesia
+    "laki-laki": "id-ID-ArdiNeural",    # Suara laki-laki Indonesia
+}
+# Rate bicara edge-tts (persentase dari normal)
+EDGE_RATE = {
+    "lambat": "-20%",
+    "normal": "+0%",
+    "cepat":  "+20%",
+}
 
 # Import modul inferensi lokal
 try:
@@ -674,9 +671,9 @@ class DokterKuApp:
         if not teks:
             messagebox.showwarning("TTS", "Masukkan teks terlebih dahulu.")
             return
-        if not GTTS_OK:
+        if not EDGE_TTS_OK and not GTTS_OK:
             messagebox.showerror("Error",
-                "gTTS tidak tersedia.\nJalankan: pip install gtts")
+                "TTS tidak tersedia.\nJalankan: pip install edge-tts")
             return
         threading.Thread(target=self._thread_tts,
                          args=(teks, False), daemon=True).start()
@@ -686,8 +683,8 @@ class DokterKuApp:
         if not teks:
             messagebox.showwarning("TTS", "Masukkan teks terlebih dahulu.")
             return
-        if not GTTS_OK:
-            messagebox.showerror("Error", "gTTS tidak tersedia.")
+        if not EDGE_TTS_OK and not GTTS_OK:
+            messagebox.showerror("Error", "TTS tidak tersedia.\nJalankan: pip install edge-tts")
             return
         path = filedialog.asksaveasfilename(
             defaultextension=".mp3",
@@ -699,74 +696,113 @@ class DokterKuApp:
                              args=(teks, True, path), daemon=True).start()
 
     def _thread_tts(self, teks, simpan=False, save_path=None):
+        """
+        Generate audio TTS menggunakan edge-tts (prioritas) atau gTTS (fallback).
+        edge-tts: support gender laki-laki/perempuan via suara Neural Indonesia.
+        """
         self.root.after(0, self.tts_progress.start, 8)
         self.root.after(0, self._update_status, "Menghasilkan audio TTS...")
+
         try:
-            lambat = self.var_kecepatan.get() == "lambat"
-            tts    = gTTS(text=teks, lang="id", slow=lambat)
+            kecepatan = self.var_kecepatan.get()   # lambat / normal / cepat
+            gender    = self.var_gender.get()       # perempuan / laki-laki
 
-            if simpan and save_path:
-                # ── Simpan ke path yang dipilih user ──
-                tts.save(save_path)
-                self.root.after(0, self.lbl_tts_status.config,
-                                {"text": f"✓ Disimpan: {os.path.basename(save_path)}"})
-                self.root.after(0, self._tambah_riwayat,
-                                f"[TTS] Simpan: {os.path.basename(save_path)}")
-                self.root.after(0, self._update_status, f"Audio disimpan: {save_path}")
+            tmp_dir  = tempfile.gettempdir()
+            tmp_path = os.path.join(
+                tmp_dir, f"dokterku_tts_{int(time.time()*1000)}.mp3"
+            )
+            out_path = save_path if (simpan and save_path) else tmp_path
+
+            if self.tts_file_tmp and os.path.exists(self.tts_file_tmp):
+                try:
+                    if PYGAME_OK:
+                        pygame.mixer.music.stop()
+                        pygame.mixer.music.unload()
+                    os.remove(self.tts_file_tmp)
+                except Exception:
+                    pass
+
+            # ════════════════════════════════════════
+            # PILIHAN 1: edge-tts
+            # ════════════════════════════════════════
+            if EDGE_TTS_OK:
+                voice = EDGE_VOICES.get(gender, "id-ID-GadisNeural")
+                rate  = EDGE_RATE.get(kecepatan, "+0%")
+
+                async def _generate():
+                    communicate = edge_tts.Communicate(
+                        text=teks,
+                        voice=voice,
+                        rate=rate
+                    )
+                    await communicate.save(out_path)
+
+                # Jalankan async di event loop baru
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                loop.run_until_complete(_generate())
+                loop.close()
+
+                engine_used = f"edge-tts [{voice}]"
+
+            # ════════════════════════════════════════
+            # PILIHAN 2: gTTS
+            # ════════════════════════════════════════
+            elif GTTS_OK:
+                lambat = (kecepatan == "lambat")
+                tts_obj = gTTS(text=teks, lang="id", slow=lambat)
+                tts_obj.save(out_path)
+                engine_used = "gTTS (fallback, gender tidak didukung)"
+
             else:
-                # ── FIX WINDOWS: Pakai path eksplisit di folder temp ──
-                # NamedTemporaryFile di Windows mengunci file sehingga
-                # gTTS dan pygame tidak bisa mengaksesnya secara bersamaan.
-                # Solusi: buat path manual, tulis, tutup, lalu baru load.
-                tmp_dir  = tempfile.gettempdir()
-                tmp_path = os.path.join(tmp_dir, f"dokterku_tts_{int(time.time()*1000)}.mp3")
+                raise RuntimeError(
+                    "Tidak ada engine TTS tersedia.\n"
+                    "Jalankan: pip install edge-tts"
+                )
 
-                # Hapus file tmp lama jika ada
-                if self.tts_file_tmp and os.path.exists(self.tts_file_tmp):
-                    try:
-                        if PYGAME_OK:
-                            pygame.mixer.music.stop()
-                            pygame.mixer.music.unload()
-                        os.remove(self.tts_file_tmp)
-                    except Exception:
-                        pass
+            # ── Verifikasi file berhasil dibuat ──
+            if not os.path.exists(out_path) or os.path.getsize(out_path) == 0:
+                raise RuntimeError(
+                    "File audio gagal dibuat. Periksa koneksi internet."
+                )
 
-                # Simpan audio ke file (file ditutup setelah save selesai)
-                tts.save(tmp_path)
+            # ── Mode simpan ──
+            if simpan and save_path:
+                nama = os.path.basename(save_path)
+                self.root.after(0, self.lbl_tts_status.config,
+                                {"text": f"✓ Disimpan: {nama}"})
+                self.root.after(0, self._tambah_riwayat,
+                                f"[TTS] Simpan: {nama} [{engine_used}]")
+                self.root.after(0, self._update_status,
+                                f"Audio disimpan: {save_path}")
+
+            # ── Mode putar ──
+            else:
                 self.tts_file_tmp = tmp_path
-
-                # Verifikasi file benar-benar ada dan tidak kosong
-                if not os.path.exists(tmp_path) or os.path.getsize(tmp_path) == 0:
-                    raise RuntimeError(
-                        f"File audio gagal dibuat: {tmp_path}\n"
-                        "Periksa koneksi internet (gTTS membutuhkan internet).")
 
                 if PYGAME_OK:
                     pygame.mixer.music.load(tmp_path)
                     pygame.mixer.music.play()
-                    if len(teks) > 50:
-                        label_teks = f"▶ Memutar: {teks[:50]}..."
-                    else:
-                        label_teks = f"▶ Memutar: {teks}"
-                    self.root.after(0, self.lbl_tts_status.config, {"text": label_teks})
-                    if len(teks) > 40:
-                        riwayat_teks = f"[TTS] Putar: {teks[:40]}..."
-                    else:
-                        riwayat_teks = f"[TTS] Putar: {teks}"
-                    self.root.after(0, self._tambah_riwayat, riwayat_teks)
-                    self.root.after(0, self._update_status, "Audio TTS sedang diputar")
+                    preview = teks[:50] + "..." if len(teks) > 50 else teks
+                    self.root.after(0, self.lbl_tts_status.config,
+                                    {"text": f"▶ Memutar [{gender}]: {preview}"})
+                    riwayat = teks[:40] + "..." if len(teks) > 40 else teks
+                    self.root.after(0, self._tambah_riwayat,
+                                    f"[TTS] {gender} | {riwayat}")
+                    self.root.after(0, self._update_status,
+                                    f"TTS sedang diputar — {engine_used}")
                 else:
                     self.root.after(0, self.lbl_tts_status.config,
-                                    {"text": "⚠ pygame tidak tersedia — jalankan: pip install pygame"})
+                                    {"text": "⚠ pygame tidak tersedia — pip install pygame"})
 
         except Exception as e:
-            err_msg = str(e)
-            # Pesan error yang lebih informatif
-            if "getaddrinfo" in err_msg or "Connection" in err_msg or "Network" in err_msg:
-                err_msg = "Tidak ada koneksi internet. gTTS membutuhkan internet untuk generate suara."
-            elif "No such file" in err_msg:
-                err_msg = f"File audio gagal dibuat. Pastikan folder Temp dapat ditulis.\nDetail: {err_msg}"
-            self.root.after(0, self.lbl_tts_status.config, {"text": f"⚠ {err_msg}"})
+            err = str(e)
+            if "getaddrinfo" in err or "Connection" in err or "Network" in err:
+                err = "Tidak ada koneksi internet. edge-tts membutuhkan internet."
+            elif "No such file" in err:
+                err = f"File audio gagal dibuat. Detail: {err}"
+            self.root.after(0, self.lbl_tts_status.config,
+                            {"text": f"⚠ {err[:120]}"})
             self.root.after(0, self._update_status, f"Error TTS: {str(e)[:60]}")
         finally:
             self.root.after(0, self.tts_progress.stop)

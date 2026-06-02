@@ -1,35 +1,3 @@
-"""
-DOKTERKU — Pipeline Ekstraksi Fitur MFCC (FIXED)
-=================================================
-PERBAIKAN UTAMA:
-  ❌ Bug lama : Z-score diterapkan PER UTTERANCE sebelum agregasi
-               → mean Z-score selalu = 0 secara matematis
-               → semua 500 sampel jadi vektor nol
-               → model tidak bisa belajar apapun
-
-  ✅ Fix baru : Z-score dihapus dari pipeline ini.
-               Normalisasi dilakukan oleh StandardScaler
-               di training_model.py (sudah ada di sana).
-               Agregasi langsung dari MFCC mentah → hasil informatif.
-
-Pipeline baru:
-  Audio .wav
-    → Pre-emphasis
-    → Framing + Windowing (Hamming)
-    → FFT + Mel Filterbank
-    → 40 Koefisien MFCC
-    → Delta (velocity)
-    → Delta-Delta (acceleration)
-    → Agregasi statistik (mean + std) per koefisien → vektor 240-dim
-    → Simpan ke features.npz
-
-Instalasi:
-    pip install librosa numpy scipy tqdm
-
-Cara pakai:
-    python ekstraksi_mfcc.py
-"""
-
 import os
 import numpy as np
 import librosa
@@ -100,16 +68,9 @@ def ekstrak_mfcc_delta(audio, sr=SAMPLE_RATE):
 
 # ─────────────────────────────────────────────
 # STEP 4 — AGREGASI STATISTIK → VEKTOR 1D
-# ✅ Z-score PER UTTERANCE DIHAPUS dari sini
-#    StandardScaler di training_model.py yang menangani normalisasi
 # ─────────────────────────────────────────────
 
 def agregasi_statistik(mfcc_combined):
-    """
-    Ubah (120, T) → vektor (240,) dengan mean + std per koefisien.
-    TIDAK ada Z-score di sini — normalisasi dilakukan oleh StandardScaler
-    saat training agar informasi pembeda antar kelas tidak hilang.
-    """
     mean_vec = mfcc_combined.mean(axis=1)  # (120,)
     std_vec  = mfcc_combined.std(axis=1)   # (120,)
     return np.concatenate([mean_vec, std_vec])  # (240,)
@@ -122,7 +83,7 @@ def proses_satu_file(path):
     audio      = load_audio(path)
     audio      = pre_emphasis(audio)
     mfcc_delta = ekstrak_mfcc_delta(audio)
-    fitur      = agregasi_statistik(mfcc_delta)   # ← langsung agregasi tanpa Z-score
+    fitur      = agregasi_statistik(mfcc_delta)
     return fitur
 
 # ─────────────────────────────────────────────
@@ -169,7 +130,7 @@ def proses_dataset():
     return X, y, file_paths, gagal
 
 # ─────────────────────────────────────────────
-# VALIDASI FITUR — cek hasil tidak nol semua
+# VALIDASI FITUR
 # ─────────────────────────────────────────────
 
 def validasi_fitur(X, y):
@@ -249,7 +210,6 @@ def demo_satu_file():
     print(f"      Min={mfcc_delta.min():.3f}  Max={mfcc_delta.max():.3f}  "
           f"Std={mfcc_delta.std():.3f}")
 
-    # ✅ Tidak ada Z-score di sini
     fitur = agregasi_statistik(mfcc_delta)
     print(f"  [4] Agregasi       : shape={fitur.shape}")
     print(f"      Min={fitur.min():.4f}  Max={fitur.max():.4f}  "
