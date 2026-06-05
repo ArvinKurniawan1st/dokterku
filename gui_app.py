@@ -24,14 +24,9 @@ try:
 except ImportError:
     EDGE_TTS_OK = False
 
-try:
-    from gtts import gTTS
-    GTTS_OK = True
-except ImportError:
-    GTTS_OK = False
 
 
-TTS_OK = EDGE_TTS_OK or GTTS_OK
+TTS_OK = EDGE_TTS_OK
 
 try:
     import pygame
@@ -145,8 +140,8 @@ class DokterKuApp:
         self.root = root
         self.root.title("DOKTERKU — Asisten Kesehatan Suara")
         self.root.configure(bg=TEMA["bg"])
-        self.root.geometry("1100x720")
-        self.root.minsize(900, 600)
+        self.root.geometry("1360x780")
+        self.root.minsize(1100, 650)
 
         # State
         self.sedang_rekam   = False
@@ -182,9 +177,9 @@ class DokterKuApp:
         # Body: 3 kolom
         body = tk.Frame(self.root, bg=TEMA["bg"])
         body.pack(fill="both", expand=True, padx=16, pady=(0, 12))
-        body.columnconfigure(0, weight=5)
-        body.columnconfigure(1, weight=5)
-        body.columnconfigure(2, weight=4)
+        body.columnconfigure(0, weight=4)
+        body.columnconfigure(1, weight=4)
+        body.columnconfigure(2, weight=3)
         body.rowconfigure(0, weight=1)
 
         # Panel kiri — ASR
@@ -209,22 +204,10 @@ class DokterKuApp:
                  bg=TEMA["bg_panel"], fg=TEMA["accent"]).pack(side="left", padx=(14, 6))
         tk.Label(hdr, text="DOKTERKU", font=("Segoe UI", 15, "bold"),
                  bg=TEMA["bg_panel"], fg=TEMA["text_primary"]).pack(side="left")
-        tk.Label(hdr, text="Asisten Kesehatan Berbasis Suara — Bahasa Indonesia",
+        tk.Label(hdr, text="Asisten Kesehatan Berbasis Suara",
                  font=("Segoe UI", 9),
                  bg=TEMA["bg_panel"], fg=TEMA["text_secondary"]).pack(side="left", padx=10)
 
-        # Badge model — tampilkan tipe + akurasi referensi
-        model_str = "Model: —"
-        if self.asr and self.asr.siap:
-            tipe = self.asr._tipe.upper()
-            acc_ref = {"RF": "88.6%", "SVM": "82.8%",
-                       "XGB": "85.1%", "MLP": "86.0%",
-                       "CNN1D": "40.9%"}.get(tipe, "")
-            acc_str = f"  acc≈{acc_ref}" if acc_ref else ""
-            model_str = f"Model: {tipe}{acc_str}  ✓  {len(self.asr._labels)} kelas"
-        tk.Label(hdr, text=model_str, font=FONT_MONO,
-                 bg=TEMA["bg_card"], fg=TEMA["accent2"],
-                 padx=10, pady=4).pack(side="right", padx=14)
 
     # ── Panel ASR ──
     def _build_panel_asr(self, parent):
@@ -235,11 +218,11 @@ class DokterKuApp:
 
         tk.Label(panel, text="🎙  ASR — Pengenalan Suara",
                  font=FONT_JUDUL, bg=TEMA["bg_panel"],
-                 fg=TEMA["accent"]).pack(anchor="w", padx=14, pady=(12, 6))
+                 fg=TEMA["accent"]).pack(anchor="w", padx=14, pady=(10, 4))
 
         # Tombol rekam
         btn_frame = tk.Frame(panel, bg=TEMA["bg_panel"])
-        btn_frame.pack(fill="x", padx=14, pady=(0, 10))
+        btn_frame.pack(fill="x", padx=14, pady=(0, 8))
 
         self.btn_rekam = tombol(btn_frame, "⏺  REKAM SEKARANG",
                                 self._mulai_rekam,
@@ -253,25 +236,25 @@ class DokterKuApp:
         self.lbl_countdown.pack(side="left", padx=12)
 
         # Hasil prediksi utama
-        section_label(panel, "HASIL PREDIKSI").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "HASIL PREDIKSI").pack(fill="x", padx=14, pady=(2, 0))
 
         hasil_card = card_frame(panel)
-        hasil_card.pack(fill="x", padx=14, pady=(4, 8))
+        hasil_card.pack(fill="x", padx=14, pady=(4, 6))
 
         self.lbl_kata = tk.Label(hasil_card, text="—",
-                                 font=("Segoe UI", 32, "bold"),
+                                 font=("Segoe UI", 26, "bold"),
                                  bg=TEMA["bg_card"], fg=TEMA["text_primary"])
-        self.lbl_kata.pack(pady=(12, 2))
+        self.lbl_kata.pack(pady=(8, 2))
 
         self.lbl_emoji = tk.Label(hasil_card, text="",
-                                  font=("Segoe UI", 18),
+                                  font=("Segoe UI", 16),
                                   bg=TEMA["bg_card"], fg=TEMA["text_primary"])
-        self.lbl_emoji.pack()
+        self.lbl_emoji.pack(pady=(0, 8))
 
         # Confidence bar
-        section_label(panel, "CONFIDENCE SCORE").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "CONFIDENCE SCORE").pack(fill="x", padx=14, pady=(2, 0))
         conf_card = card_frame(panel)
-        conf_card.pack(fill="x", padx=14, pady=(4, 8))
+        conf_card.pack(fill="x", padx=14, pady=(4, 6))
 
         conf_inner = tk.Frame(conf_card, bg=TEMA["bg_card"])
         conf_inner.pack(fill="x", padx=12, pady=10)
@@ -296,9 +279,9 @@ class DokterKuApp:
         self.lbl_urgensi.pack(pady=(0, 8))
 
         # Saran
-        section_label(panel, "SARAN KESEHATAN").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "SARAN KESEHATAN").pack(fill="x", padx=14, pady=(2, 0))
         saran_card = card_frame(panel)
-        saran_card.pack(fill="both", expand=True, padx=14, pady=(4, 12))
+        saran_card.pack(fill="both", expand=True, padx=14, pady=(4, 8))
 
         self.txt_saran = tk.Text(saran_card, wrap="word",
                                  bg=TEMA["bg_card"], fg=TEMA["text_primary"],
@@ -312,7 +295,7 @@ class DokterKuApp:
         self.btn_ke_tts = tombol(panel, "➡  Kirim Saran ke TTS",
                                  self._kirim_ke_tts,
                                  color=TEMA["accent2"])
-        self.btn_ke_tts.pack(pady=(0, 12), padx=14, anchor="w")
+        self.btn_ke_tts.pack(pady=(4, 10), padx=14, anchor="w")
 
     # ── Panel TTS ──
     def _build_panel_tts(self, parent):
@@ -323,14 +306,14 @@ class DokterKuApp:
 
         tk.Label(panel, text="🔊  TTS — Teks ke Suara",
                  font=FONT_JUDUL, bg=TEMA["bg_panel"],
-                 fg=TEMA["accent2"]).pack(anchor="w", padx=14, pady=(12, 6))
+                 fg=TEMA["accent2"]).pack(anchor="w", padx=14, pady=(10, 4))
 
         # Input teks
-        section_label(panel, "TEKS INPUT").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "TEKS INPUT").pack(fill="x", padx=14, pady=(2, 0))
         input_card = card_frame(panel)
-        input_card.pack(fill="x", padx=14, pady=(4, 8))
+        input_card.pack(fill="x", padx=14, pady=(4, 6))
 
-        self.txt_input = tk.Text(input_card, wrap="word", height=7,
+        self.txt_input = tk.Text(input_card, wrap="word", height=6,
                                  bg=TEMA["bg_input"], fg=TEMA["text_primary"],
                                  font=("Segoe UI", 10), relief="flat",
                                  padx=12, pady=10, insertbackground=TEMA["text_primary"],
@@ -341,12 +324,12 @@ class DokterKuApp:
         self.txt_input.bind("<FocusOut>", self._restore_placeholder)
 
         # Opsi TTS
-        section_label(panel, "PENGATURAN SUARA").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "PENGATURAN SUARA").pack(fill="x", padx=14, pady=(2, 0))
         opt_card = card_frame(panel)
-        opt_card.pack(fill="x", padx=14, pady=(4, 8))
+        opt_card.pack(fill="x", padx=14, pady=(4, 6))
 
         opt_inner = tk.Frame(opt_card, bg=TEMA["bg_card"])
-        opt_inner.pack(fill="x", padx=12, pady=10)
+        opt_inner.pack(fill="x", padx=12, pady=8)
 
         # Gender
         tk.Label(opt_inner, text="Gender :", font=FONT_KECIL,
@@ -379,7 +362,7 @@ class DokterKuApp:
 
         # Tombol TTS
         btn_tts_row = tk.Frame(panel, bg=TEMA["bg_panel"])
-        btn_tts_row.pack(fill="x", padx=14, pady=(0, 8))
+        btn_tts_row.pack(fill="x", padx=14, pady=(0, 6))
 
         tombol(btn_tts_row, "▶  Putar Suara",
                self._putar_tts, color=TEMA["accent2"]).pack(side="left", padx=(0, 8))
@@ -387,28 +370,28 @@ class DokterKuApp:
                self._simpan_audio, color=TEMA["bg_input"]).pack(side="left")
 
         # Preview audio
-        section_label(panel, "STATUS TTS").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "STATUS TTS").pack(fill="x", padx=14, pady=(2, 0))
         status_card = card_frame(panel)
-        status_card.pack(fill="x", padx=14, pady=(4, 8))
+        status_card.pack(fill="x", padx=14, pady=(4, 6))
 
         self.lbl_tts_status = tk.Label(status_card,
                                        text="Belum ada audio dihasilkan.",
-                                       font=FONT_KECIL, wraplength=280,
+                                       font=FONT_KECIL, wraplength=320,
                                        justify="left",
                                        bg=TEMA["bg_card"],
                                        fg=TEMA["text_secondary"])
-        self.lbl_tts_status.pack(padx=12, pady=10, anchor="w")
+        self.lbl_tts_status.pack(padx=12, pady=8, anchor="w")
 
         # Progress bar TTS
         self.tts_progress = ttk.Progressbar(panel, mode="indeterminate",
                                             length=200)
-        self.tts_progress.pack(padx=14, pady=(0, 8), fill="x")
+        self.tts_progress.pack(padx=14, pady=(0, 6), fill="x")
         self.tts_progress.stop()
 
         # Riwayat TTS
-        section_label(panel, "RIWAYAT").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "RIWAYAT").pack(fill="x", padx=14, pady=(2, 0))
         riwayat_card = card_frame(panel)
-        riwayat_card.pack(fill="both", expand=True, padx=14, pady=(4, 12))
+        riwayat_card.pack(fill="both", expand=True, padx=14, pady=(4, 10))
 
         self.txt_riwayat = tk.Text(riwayat_card, wrap="word",
                                    bg=TEMA["bg_card"], fg=TEMA["text_secondary"],
@@ -426,41 +409,20 @@ class DokterKuApp:
 
         tk.Label(panel, text="📊  Analisis",
                  font=FONT_JUDUL, bg=TEMA["bg_panel"],
-                 fg=TEMA["accent_warn"]).pack(anchor="w", padx=14, pady=(12, 6))
-
-        # MFCC plot
-        section_label(panel, "VISUALISASI MFCC").pack(fill="x", padx=14, pady=(4, 0))
-
-        mfcc_card = card_frame(panel)
-        mfcc_card.pack(fill="x", padx=14, pady=(4, 8))
-
-        if MATPLOTLIB_OK:
-            self.fig, self.ax = plt.subplots(figsize=(3.2, 1.8), dpi=80)
-            self.fig.patch.set_facecolor(TEMA["bg_card"])
-            self.ax.set_facecolor(TEMA["bg_input"])
-            self.ax.set_title("MFCC", fontsize=8, color=TEMA["text_secondary"])
-            self.ax.set_xlabel("")
-            self.ax.tick_params(colors=TEMA["text_muted"], labelsize=6)
-            plt.tight_layout(pad=0.5)
-            self.canvas_mfcc = FigureCanvasTkAgg(self.fig, master=mfcc_card)
-            self.canvas_mfcc.get_tk_widget().pack(fill="both", padx=4, pady=4)
-        else:
-            tk.Label(mfcc_card, text="matplotlib tidak tersedia\npip install matplotlib",
-                     font=FONT_KECIL, bg=TEMA["bg_card"],
-                     fg=TEMA["text_muted"]).pack(pady=20)
+                 fg=TEMA["accent_warn"]).pack(anchor="w", padx=14, pady=(10, 4))
 
         # Top 3 prediksi
-        section_label(panel, "TOP 3 PREDIKSI").pack(fill="x", padx=14, pady=(4, 0))
+        section_label(panel, "TOP 3 PREDIKSI").pack(fill="x", padx=14, pady=(2, 0))
         top3_card = card_frame(panel)
-        top3_card.pack(fill="x", padx=14, pady=(4, 8))
+        top3_card.pack(fill="x", padx=14, pady=(4, 6))
 
         self.top3_frames = []
         for i in range(3):
             row = tk.Frame(top3_card, bg=TEMA["bg_card"])
-            row.pack(fill="x", padx=10, pady=(6 if i == 0 else 3, 0))
+            row.pack(fill="x", padx=10, pady=(5 if i == 0 else 2, 0))
 
             lbl_rank = tk.Label(row, text=f"#{i+1}",
-                                font=("Segoe UI", 8, "bold"),
+                                font=("Segoe UI", 9, "bold"),
                                 bg=TEMA["bg_card"],
                                 fg=[TEMA["accent"], TEMA["text_secondary"],
                                     TEMA["text_muted"]][i],
@@ -488,27 +450,28 @@ class DokterKuApp:
         # spacer
         tk.Frame(top3_card, bg=TEMA["bg_card"], height=6).pack()
 
-        # Info kelas
-        section_label(panel, "INFO KELAS").pack(fill="x", padx=14, pady=(4, 0))
-        info_card = card_frame(panel)
-        info_card.pack(fill="both", expand=True, padx=14, pady=(4, 12))
+        # MFCC plot — di bawah Top 3
+        section_label(panel, "VISUALISASI MFCC").pack(fill="x", padx=14, pady=(6, 0))
 
-        self.txt_info = tk.Text(info_card, wrap="word",
-                                bg=TEMA["bg_card"], fg=TEMA["text_secondary"],
-                                font=FONT_MONO, relief="flat",
-                                padx=10, pady=8, state="disabled",
-                                highlightthickness=0)
-        self.txt_info.pack(fill="both", expand=True)
+        mfcc_card = card_frame(panel)
+        mfcc_card.pack(fill="both", expand=True, padx=14, pady=(4, 10))
 
-        n_kelas = len(self.asr._labels) if (self.asr and self.asr.siap) else "?"
-        self._tulis_info(f"Model: {self.asr._tipe.upper() if self.asr and self.asr.siap else '—'}\n"
-                         f"Kelas: {n_kelas}\n\n"
-                         "Cara pakai:\n"
-                         "1. Klik REKAM\n"
-                         "2. Ucapkan kata gejala\n"
-                         "3. Lihat hasil prediksi\n"
-                         "4. Klik Kirim ke TTS\n"
-                         "   untuk mendengar saran")
+        if MATPLOTLIB_OK:
+            self.fig, self.ax = plt.subplots(figsize=(3.6, 2.4), dpi=80)
+            self.fig.patch.set_facecolor(TEMA["bg_card"])
+            self.ax.set_facecolor(TEMA["bg_input"])
+            self.ax.set_title("MFCC (40 koef × frame)", fontsize=7, color=TEMA["text_secondary"])
+            self.ax.set_ylabel("Koefisien", fontsize=6, color=TEMA["text_muted"])
+            self.ax.set_xlabel("Frame", fontsize=6, color=TEMA["text_muted"])
+            self.ax.tick_params(colors=TEMA["text_muted"], labelsize=5)
+            self.fig.tight_layout(pad=0.5)
+            self.canvas_mfcc = FigureCanvasTkAgg(self.fig, master=mfcc_card)
+            self.canvas_mfcc.get_tk_widget().pack(fill="both", expand=True, padx=4, pady=4)
+        else:
+            tk.Label(mfcc_card, text="matplotlib tidak tersedia\npip install matplotlib",
+                     font=FONT_KECIL, bg=TEMA["bg_card"],
+                     fg=TEMA["text_muted"]).pack(pady=20)
+
 
     def _build_statusbar(self):
         bar = tk.Frame(self.root, bg=TEMA["bg_panel"],
@@ -671,10 +634,6 @@ class DokterKuApp:
         if not teks:
             messagebox.showwarning("TTS", "Masukkan teks terlebih dahulu.")
             return
-        if not EDGE_TTS_OK and not GTTS_OK:
-            messagebox.showerror("Error",
-                "TTS tidak tersedia.\nJalankan: pip install edge-tts")
-            return
         threading.Thread(target=self._thread_tts,
                          args=(teks, False), daemon=True).start()
 
@@ -682,9 +641,6 @@ class DokterKuApp:
         teks = self._get_teks()
         if not teks:
             messagebox.showwarning("TTS", "Masukkan teks terlebih dahulu.")
-            return
-        if not EDGE_TTS_OK and not GTTS_OK:
-            messagebox.showerror("Error", "TTS tidak tersedia.\nJalankan: pip install edge-tts")
             return
         path = filedialog.asksaveasfilename(
             defaultextension=".mp3",
@@ -722,9 +678,6 @@ class DokterKuApp:
                 except Exception:
                     pass
 
-            # ════════════════════════════════════════
-            # PILIHAN 1: edge-tts
-            # ════════════════════════════════════════
             if EDGE_TTS_OK:
                 voice = EDGE_VOICES.get(gender, "id-ID-GadisNeural")
                 rate  = EDGE_RATE.get(kecepatan, "+0%")
@@ -745,20 +698,6 @@ class DokterKuApp:
 
                 engine_used = f"edge-tts [{voice}]"
 
-            # ════════════════════════════════════════
-            # PILIHAN 2: gTTS
-            # ════════════════════════════════════════
-            elif GTTS_OK:
-                lambat = (kecepatan == "lambat")
-                tts_obj = gTTS(text=teks, lang="id", slow=lambat)
-                tts_obj.save(out_path)
-                engine_used = "gTTS (fallback, gender tidak didukung)"
-
-            else:
-                raise RuntimeError(
-                    "Tidak ada engine TTS tersedia.\n"
-                    "Jalankan: pip install edge-tts"
-                )
 
             # ── Verifikasi file berhasil dibuat ──
             if not os.path.exists(out_path) or os.path.getsize(out_path) == 0:
