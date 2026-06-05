@@ -1,21 +1,3 @@
-"""
-DOKTERKU — Modul Inferensi Real-Time ASR
-==========================================
-Diimpor oleh gui_dokterku.py untuk melakukan:
-  1. Rekam audio dari mikrofon (2 detik)
-  2. Ekstrak fitur MFCC (pipeline sama dengan training)
-  3. Prediksi kata gejala + confidence score
-  4. Ambil saran dari knowledge base
-
-Cara pakai mandiri (uji tanpa GUI):
-    python inferensi.py
-
-Cara pakai dari GUI:
-    from inferensi import InferensiASR
-    asr = InferensiASR()
-    kata, conf, saran = asr.rekam_dan_prediksi()
-"""
-
 import os
 import pickle
 import threading
@@ -25,7 +7,7 @@ import sounddevice as sd
 from scipy.io import wavfile
 
 # ─────────────────────────────────────────────
-# KONFIGURASI — harus sama dengan ekstraksi_mfcc.py
+# KONFIGURASI
 # ─────────────────────────────────────────────
 SAMPLE_RATE   = 16000
 DURASI_REKAM  = 2.0
@@ -149,7 +131,7 @@ URGENSI_WARNA = {
 }
 
 # ─────────────────────────────────────────────
-# PIPELINE EKSTRAKSI — identik dengan training
+# PIPELINE EKSTRAKSI
 # ─────────────────────────────────────────────
 
 def _load_audio_array(audio_array, sr=SAMPLE_RATE, durasi_max=DURASI_MAX if 'DURASI_MAX' in dir() else DURASI_REKAM):
@@ -267,9 +249,6 @@ class InferensiASR:
                 # Konversi label ke string bersih
                 labels = [str(l) for l in labels_raw]
 
-                # Validasi: jika label berupa angka ("0","1",...), ganti dengan
-                # nama kata dari KNOWLEDGE_BASE berdasarkan urutan index
-                # Ini terjadi jika LabelEncoder dipakai saat training
                 if labels and labels[0].isdigit():
                     print(f"  ⚠ Label numerik terdeteksi ({labels[:3]}...)")
                     print(f"    Mapping ke nama kata dari KNOWLEDGE_BASE")
@@ -420,11 +399,8 @@ class InferensiASR:
         # ── Sklearn-based: SVM, Random Forest, XGBoost ──
         if self._tipe in ("svm", "rf", "xgb"):
             proba   = self._model.predict_proba(fitur_s)[0]
-            classes = self._model.classes_   # bisa [0,1,...] atau ["demam",...]
+            classes = self._model.classes_  
 
-            # Buat mapping classes → label string yang aman
-            # Kasus 1: classes integer [0,1,...] → pakai sebagai index ke self._labels
-            # Kasus 2: classes string ["demam",...] → langsung pakai
             if hasattr(classes[0], 'item'):
                 c0 = classes[0].item()   # numpy scalar → python
             else:
@@ -485,7 +461,7 @@ class InferensiASR:
 
 
 # ─────────────────────────────────────────────
-# UJI MANDIRI (tanpa GUI)
+# UJI MANDIRI
 # ─────────────────────────────────────────────
 
 if __name__ == "__main__":
